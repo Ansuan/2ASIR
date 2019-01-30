@@ -256,7 +256,7 @@ Crear una nueva vista en ***CI/application/views/news/create.php*** para inserta
 ```
 
 ### Uso de helper
-Crear un nuevo helper en ***CI/application/helper/site_helper.php*** en el que se incluira la funcion de CURL por ello se requerira la instalación de la clase ***CURL*** siendo desde Ubuntu ***apt install php-curl***
+Crear un nuevo helper en ***CI/application/helpers/site_helper.php*** en el que se incluira la funcion de CURL por ello se requerira la instalación de la clase ***CURL*** siendo desde Ubuntu ***apt install php-curl***
 ```php
 <?php
  function getPage($url,$method,$params) {
@@ -300,3 +300,31 @@ Crear un nuevo helper en ***CI/application/helper/site_helper.php*** en el que s
 ?>
 ```
 Añadir en ***CI/application/config/autoload.conf*** 
+```php
+$autoload['helper'] = array(site);
+```
+Añadir en el controlador ***CI/application/controllers/Welcome.php*** haciendo uso del helper de la clase CURL para obtener el JSON, decodificarlo para guardarlo en un array y pasarlo a la vista
+```php
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Welcome extends CI_Controller {
+
+        public function index()
+        {
+                $this->load->helper('site');
+                $url='http://';
+                $data['obj']=json_decode(getSslPage($url),true);
+                $this->load->view('welcome_message',$data);
+        }
+}
+```
+Añadir en la vista ***CI/application/views/welcome_message.php***  un foreach para recorrer el array pasado
+```php
+<?php
+foreach ($obj as $k => $v){
+        echo $v['id'] . '<br>';
+        echo $v['name'] . '<br>';
+}
+?>
+```
