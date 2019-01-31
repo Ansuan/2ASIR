@@ -1,0 +1,1313 @@
+﻿<!DOCTYPE html>
+<html lang="es-ES" prefix="og: http://ogp.me/ns#">
+
+<head>
+	<meta charset='UTF-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<title>Capítulo 12: Integración de redes mixtas con Windows y Linux - Página 7 de 9 - SomeBooks.es</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.9 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="index.html">
+<link rel="prev" href="..\6\index.html">
+<link rel="next" href="..\8\index.html">
+<meta property="og:locale" content="es_ES">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Capítulo 12: Integración de redes mixtas con Windows y Linux - Página 7 de 9 - SomeBooks.es">
+<meta property="og:description" content="12.7. Crear un controlador de dominio de Active Directory con Samba 4 en Ubuntu 14.04 LTS Resulta evidente que la posibilidad de realizar en GNU/Linux un reemplazo completo de las funciones de Directorio Activo de Leer más&hellip;">
+<meta property="og:url" content="http://somebooks.es/capitulo-12-integracion-de-redes-mixtas-con-windows-y-linux/7/">
+<meta property="og:site_name" content="SomeBooks.es">
+<meta property="article:publisher" content="https://www.facebook.com/pages/Somebookses/474938955936480">
+<meta property="article:tag" content="14.04">
+<meta property="article:tag" content="Active directory">
+<meta property="article:tag" content="AD DC">
+<meta property="article:tag" content="compartir">
+<meta property="article:tag" content="configuración">
+<meta property="article:tag" content="Domain Controler">
+<meta property="article:tag" content="free">
+<meta property="article:tag" content="gratis">
+<meta property="article:tag" content="Libro">
+<meta property="article:tag" content="LTS">
+<meta property="article:tag" content="manual">
+<meta property="article:tag" content="problemas">
+<meta property="article:tag" content="Samba">
+<meta property="article:tag" content="Server">
+<meta property="article:tag" content="servicios">
+<meta property="article:tag" content="tutorial">
+<meta property="article:tag" content="ubuntu">
+<meta property="article:section" content="Sistemas Operativos en Red (2ª ed.)">
+<meta property="article:published_time" content="2015-02-11T19:04:06+00:00">
+<meta property="article:modified_time" content="2017-03-05T20:20:04+00:00">
+<meta property="og:updated_time" content="2017-03-05T20:20:04+00:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="12.7. Crear un controlador de dominio de Active Directory con Samba 4 en Ubuntu 14.04 LTS Resulta evidente que la posibilidad de realizar en GNU/Linux un reemplazo completo de las funciones de Directorio Activo de Leer más&hellip;">
+<meta name="twitter:title" content="Capítulo 12: Integración de redes mixtas con Windows y Linux - Página 7 de 9 - SomeBooks.es">
+<meta name="twitter:site" content="@SomeBooks_es">
+<meta name="twitter:image" content="http://somebooks.es/wp-content/uploads/2014/08/volver.png">
+<meta name="twitter:creator" content="@SomeBooks_es">
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//s0.wp.com'>
+<link rel='dns-prefetch' href='//secure.gravatar.com'>
+<link rel='dns-prefetch' href='//maxcdn.bootstrapcdn.com'>
+<link rel='dns-prefetch' href='//fonts.googleapis.com'>
+<link rel='dns-prefetch' href='//s.w.org'>
+<link rel="alternate" type="application/rss+xml" title="SomeBooks.es &raquo; Feed" href="http://somebooks.es/feed/">
+<link rel="alternate" type="application/rss+xml" title="SomeBooks.es &raquo; RSS de los comentarios" href="http://somebooks.es/comments/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/somebooks.es\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.9"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='hestia-clients-bar-css' href='http://somebooks.es/wp-content/plugins/themeisle-companion/obfx_modules/companion-legacy/assets/css/hestia/clients-bar.css?ver=4.9.9' type='text/css' media='all'>
+<link rel='stylesheet' id='dashicons-css' href='http://somebooks.es/wp-includes/css/dashicons.min.css?ver=4.9.9' type='text/css' media='all'>
+<link rel='stylesheet' id='obfx-module-pub-css-menu-icons-0-css' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?ver=2.5.4' type='text/css' media='all'>
+<link rel='stylesheet' id='obfx-module-pub-css-menu-icons-1-css' href='http://somebooks.es/wp-content/plugins/themeisle-companion/obfx_modules/menu-icons/css/public.css?ver=2.5.4' type='text/css' media='all'>
+<link rel='stylesheet' id='wpstatistics-css-css' href='http://somebooks.es/wp-content/plugins/wp-statistics/assets/css/frontend.css?ver=12.3.6.4' type='text/css' media='all'>
+<link rel='stylesheet' id='bootstrap-css' href='http://somebooks.es/wp-content/themes/hestia/assets/bootstrap/css/bootstrap.min.css?ver=1.0.1' type='text/css' media='all'>
+<link rel='stylesheet' id='hestia-font-sizes-css' href='http://somebooks.es/wp-content/themes/hestia/assets/css/font-sizes.css?ver=1.1.83' type='text/css' media='all'>
+<link rel='stylesheet' id='font-awesome-css' href='http://somebooks.es/wp-content/themes/hestia/assets/font-awesome/css/font-awesome.min.css?ver=1.0.1' type='text/css' media='all'>
+<link rel='stylesheet' id='hestia_style-css' href='http://somebooks.es/wp-content/themes/hestia/style.css?ver=1.1.83' type='text/css' media='all'>
+<style id='hestia_style-inline-css' type='text/css'>
+.hestia-top-bar, .hestia-top-bar .widget.widget_shopping_cart .cart_list {
+			background-color: #363537
+		}
+		.hestia-top-bar .widget .label-floating input[type=search]:-webkit-autofill {
+			-webkit-box-shadow: inset 0 0 0px 9999px #363537
+		}.hestia-top-bar, .hestia-top-bar .widget .label-floating input[type=search], .hestia-top-bar .widget.widget_search form.form-group:before, .hestia-top-bar .widget.widget_product_search form.form-group:before, .hestia-top-bar .widget.widget_shopping_cart:before {
+			color: #ffffff
+		} 
+		.hestia-top-bar .widget .label-floating input[type=search]{
+			-webkit-text-fill-color:#ffffff !important 
+		}.hestia-top-bar a, .hestia-top-bar .top-bar-nav li a {
+			color: #ffffff
+		}.hestia-top-bar a:hover, .hestia-top-bar .top-bar-nav li a:hover {
+			color: #eeeeee
+		}
+	
+		a, 
+		.navbar .dropdown-menu li:hover > a,
+		.navbar .dropdown-menu li:focus > a,
+		.navbar .dropdown-menu li:active > a,
+		.navbar.navbar-not-transparent .nav > li:not(.btn).on-section > a, 
+		.navbar.navbar-not-transparent .nav > li.on-section:not(.btn) > a, 
+		.navbar.navbar-not-transparent .nav > li.on-section:not(.btn):hover > a, 
+		.navbar.navbar-not-transparent .nav > li.on-section:not(.btn):focus > a, 
+		.navbar.navbar-not-transparent .nav > li.on-section:not(.btn):active > a, 
+		body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a,
+		body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a:hover,
+		body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a:focus,
+		a:hover, 
+		.card-blog a.moretag:hover, 
+		.card-blog a.more-link:hover, 
+		.widget a:hover {
+		    color:#0c79ff;
+		}
+		
+		.pagination span.current, .pagination span.current:focus, .pagination span.current:hover {
+			border-color:#0c79ff
+		}
+		
+		button,
+		button:hover,           
+		input[type="button"],
+		input[type="button"]:hover,
+		input[type="submit"],
+		input[type="submit"]:hover,
+		input#searchsubmit, 
+		.pagination span.current, 
+		.pagination span.current:focus, 
+		.pagination span.current:hover,
+		.btn.btn-primary,
+		.btn.btn-primary:link,
+		.btn.btn-primary:hover, 
+		.btn.btn-primary:focus, 
+		.btn.btn-primary:active, 
+		.btn.btn-primary.active, 
+		.btn.btn-primary.active:focus, 
+		.btn.btn-primary.active:hover,
+		.btn.btn-primary:active:hover, 
+		.btn.btn-primary:active:focus, 
+		.btn.btn-primary:active:hover,
+		.hestia-sidebar-open.btn.btn-rose,
+		.hestia-sidebar-close.btn.btn-rose,
+		.hestia-sidebar-open.btn.btn-rose:hover,
+		.hestia-sidebar-close.btn.btn-rose:hover,
+		.hestia-sidebar-open.btn.btn-rose:focus,
+		.hestia-sidebar-close.btn.btn-rose:focus,
+		.label.label-primary,
+		.hestia-work .portfolio-item:nth-child(6n+1) .label,
+		.nav-cart .nav-cart-content .widget .buttons .button{
+		    background-color: #0c79ff;
+		}
+		
+		@media (max-width: 768px) { 
+	
+			.navbar-default .navbar-nav>li>a:hover,
+			.navbar-default .navbar-nav>li>a:focus,
+			.navbar .navbar-nav .dropdown .dropdown-menu li a:hover,
+			.navbar .navbar-nav .dropdown .dropdown-menu li a:focus,
+			.navbar button.navbar-toggle:hover,
+			.navbar .navbar-nav li:hover > a i {
+			    color: #0c79ff;
+			}
+		}
+		
+		button,
+		.button,
+		input[type="submit"], 
+		input[type="button"], 
+		.btn.btn-primary,
+		.hestia-sidebar-open.btn.btn-rose,
+		.hestia-sidebar-close.btn.btn-rose {
+		    -webkit-box-shadow: 0 2px 2px 0 rgba(12,121,255,0.14),0 3px 1px -2px rgba(12,121,255,0.2),0 1px 5px 0 rgba(12,121,255,0.12);
+		    box-shadow: 0 2px 2px 0 rgba(12,121,255,0.14),0 3px 1px -2px rgba(12,121,255,0.2),0 1px 5px 0 rgba(12,121,255,0.12);
+		}
+		
+		.card .header-primary, .card .content-primary {
+		    background: #0c79ff;
+		}
+		
+		.button:hover,
+		button:hover,
+		input[type="submit"]:hover,
+		input[type="button"]:hover,
+		input#searchsubmit:hover, 
+		.pagination span.current, 
+		.btn.btn-primary:hover, 
+		.btn.btn-primary:focus, 
+		.btn.btn-primary:active, 
+		.btn.btn-primary.active, 
+		.btn.btn-primary:active:focus, 
+		.btn.btn-primary:active:hover, 
+		.hestia-sidebar-open.btn.btn-rose:hover,
+		.hestia-sidebar-close.btn.btn-rose:hover,
+		.pagination span.current:hover{
+			-webkit-box-shadow: 0 14px 26px -12pxrgba(12,121,255,0.42),0 4px 23px 0 rgba(0,0,0,0.12),0 8px 10px -5px rgba(12,121,255,0.2);
+		    box-shadow: 0 14px 26px -12px rgba(12,121,255,0.42),0 4px 23px 0 rgba(0,0,0,0.12),0 8px 10px -5px rgba(12,121,255,0.2);
+			color: #fff;
+		}
+		
+		.form-group.is-focused .form-control {
+		background-image: -webkit-gradient(linear,left top, left bottom,from(#0c79ff),to(#0c79ff)),-webkit-gradient(linear,left top, left bottom,from(#d2d2d2),to(#d2d2d2));
+			background-image: -webkit-linear-gradient(#0c79ff),to(#0c79ff),-webkit-linear-gradient(#d2d2d2,#d2d2d2);
+			background-image: linear-gradient(#0c79ff),to(#0c79ff),linear-gradient(#d2d2d2,#d2d2d2);
+		}
+		
+		.navbar:not(.navbar-transparent) li:not(.btn):hover > a,
+		 .navbar.full-screen-menu.navbar-transparent li:not(.btn):hover > a,
+		 .navbar.full-screen-menu .navbar-toggle:hover,
+		 .navbar:not(.navbar-transparent) .nav-cart:hover, 
+		 .navbar:not(.navbar-transparent) .hestia-toggle-search:hover {
+				 color:#0c79ff}
+		
+		.header-filter-gradient { 
+			background: linear-gradient(45deg, rgba(30,115,190,1) 0%, rgb(96,143,169) 100%); 
+		} 
+h1, h2, h3, h4, h5, h6, .hestia-title, .hestia-title.title-in-content, p.meta-in-content , .info-title, .card-title,
+		.page-header.header-small .hestia-title, .page-header.header-small .title, .widget h5, .hestia-title, 
+		.title, .card-title, .info-title, .footer-brand, .footer-big h4, .footer-big h5, .media .media-heading, 
+		.carousel h1.hestia-title, .carousel h2.title, 
+		.carousel span.sub-title, .woocommerce.single-product h1.product_title, .woocommerce section.related.products h2, .hestia-about h1, .hestia-about h2, .hestia-about h3, .hestia-about h4, .hestia-about h5 {
+			font-family: Arial, Helvetica, sans-serif;
+		}
+@media (min-width: 769px){
+			.page-header.header-small .hestia-title,
+			.page-header.header-small .title,
+			h1.hestia-title.title-in-content{
+				font-size: 33px;
+			}}@media (max-width: 768px){
+			.page-header.header-small .hestia-title,
+			.page-header.header-small .title,
+			h1.hestia-title.title-in-content{
+				font-size: 36px;
+			}}@media (max-width: 480px){
+			.page-header.header-small .hestia-title,
+			.page-header.header-small .title,
+			h1.hestia-title.title-in-content{
+				font-size: 36px;
+			}}@media (min-width: 769px){
+		.single-post-wrap article h1:not(.title-in-content),
+		.page-content-wrap h1:not(.title-in-content),
+		.page-template-template-fullwidth article h1:not(.title-in-content) {
+			font-size: 36px;
+		}
+		.single-post-wrap article h2,
+		.page-content-wrap h2,
+		.page-template-template-fullwidth article h2 {
+			font-size: 31px;
+		}
+		.single-post-wrap article h3,
+		.page-content-wrap h3,
+		.page-template-template-fullwidth article h3 {
+			font-size: 26px;
+		}
+		.single-post-wrap article h4,
+		.page-content-wrap h4,
+		.page-template-template-fullwidth article h4 {
+			font-size: 21px;
+		}
+		.single-post-wrap article h5,
+		.page-content-wrap h5,
+		.page-template-template-fullwidth article h5 {
+			font-size: 17px;
+		}
+		.single-post-wrap article h6,
+		.page-content-wrap h6,
+		.page-template-template-fullwidth article h6 {
+			font-size: 12px;
+		}}
+
+		.page-template-builder-fullwidth-std .header > .elementor {
+			padding-top: 70px;
+		}
+
+</style>
+<link rel='stylesheet' id='hestia_fonts-css' href='https://fonts.googleapis.com/css?family=Roboto%3A300%2C400%2C500%2C700%7CRoboto+Slab%3A400%2C700&#038;subset=latin%2Clatin-ext&#038;ver=1.1.83' type='text/css' media='all'>
+<link rel='stylesheet' id='jetpack-widget-social-icons-styles-css' href='http://somebooks.es/wp-content/plugins/jetpack/modules/widgets/social-icons/social-icons.css?ver=20170506' type='text/css' media='all'>
+<link rel='stylesheet' id='social-logos-css' href='http://somebooks.es/wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=1' type='text/css' media='all'>
+<link rel='stylesheet' id='jetpack_css-css' href='http://somebooks.es/wp-content/plugins/jetpack/css/jetpack.css?ver=6.3.3' type='text/css' media='all'>
+<script type='text/javascript' src='http://somebooks.es/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://somebooks.es/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://somebooks.es/wp-content/plugins/jetpack/_inc/build/related-posts/related-posts.min.js?ver=20150408'></script>
+<link rel='https://api.w.org/' href='http://somebooks.es/wp-json/'>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://somebooks.es/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://somebooks.es/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.9.9">
+<link rel='shortlink' href='https://wp.me/p81njQ-1uK'>
+<link rel="alternate" type="application/json+oembed" href="http://somebooks.es/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fsomebooks.es%2Fcapitulo-12-integracion-de-redes-mixtas-con-windows-y-linux%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://somebooks.es/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fsomebooks.es%2Fcapitulo-12-integracion-de-redes-mixtas-con-windows-y-linux%2F&#038;format=xml">
+
+<link rel='dns-prefetch' href='//v0.wordpress.com'>
+<style type='text/css'>img#wpstats{display:none}</style><style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #1e73be; }
+</style>
+<link rel="icon" href="http://somebooks.es/wp-content/uploads/2016/10/marca-de-agua-vídeo-2-150x150.png" sizes="32x32">
+<link rel="icon" href="http://somebooks.es/wp-content/uploads/2016/10/marca-de-agua-vídeo-2.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="http://somebooks.es/wp-content/uploads/2016/10/marca-de-agua-vídeo-2.png">
+<meta name="msapplication-TileImage" content="http://somebooks.es/wp-content/uploads/2016/10/marca-de-agua-vídeo-2.png">
+			<link rel="stylesheet" type="text/css" id="wp-custom-css" href="http://somebooks.es/?custom-css=a79ce01f7c">
+		</head>
+
+<body class="post-template-default single single-post postid-5750 single-format-standard custom-background wp-custom-logo paged-7 single-paged-7 blog-post">
+	<div class="wrapper post-5750 post type-post status-publish format-standard hentry category-sistemas-operativos-en-red-2a-ed tag-14-04 tag-active-directory tag-ad-dc tag-compartir tag-configuracion tag-domain-controler tag-free tag-gratis tag-libro tag-lts tag-manual tag-problemas tag-samba tag-server tag-servicios tag-tutorial tag-ubuntu">
+		<header class="header ">
+					<nav class="navbar navbar-default navbar-fixed-top  hestia_left navbar-not-transparent">
+						<div class="container">
+				<div class="navbar-header">
+					<div class="title-logo-wrapper">
+						<a class="navbar-brand" href="http://somebooks.es/" title="SomeBooks.es">
+							<img src="http://somebooks.es/wp-content/uploads/2016/10/cropped-logo_somebooks.png" alt="SomeBooks.es"></a>
+					</div>
+				</div>
+				<div id="main-navigation" class="collapse navbar-collapse"><ul id="menu-menu" class="nav navbar-nav navbar-right"><li id="menu-item-1368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1368"><a title="Home" href="http://somebooks.es">Home</a></li>
+<li id="menu-item-10263" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-10263 dropdown"><a title="Nuestros libros" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Nuestros libros <span class="caret"></span></a>
+<ul role="menu" class="dropdown-menu">
+	<li id="menu-item-10100" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10100"><a title="Colección de fichas: Infantil de 3 años" href="http://somebooks.es/coleccion-de-fichas-infantil-de-3-anos/"><img style="float: left; max-height:3em;padding-right:1em;" src="http://somebooks.es/wp-content/uploads/2018/05/infantil_3.png" alt=""> Colección de fichas: <br>Infantil de 3 años</a></li>
+	<li id="menu-item-10101" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10101"><a title="Colección de fichas: Infantil de 4 años" href="http://somebooks.es/coleccion-de-fichas-infantil-de-4-anos/"><img style="float: left; max-height:3em;padding-right:1em;" src="http://somebooks.es/wp-content/uploads/2018/05/infantil-4-b.png"> Colección de fichas: <br>Infantil de 4 años</a></li>
+	<li id="menu-item-10102" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10102"><a title="Aprende a programar en Android:       Nivel básico" href="http://somebooks.es/aprende-a-programar-en-android-nivel-basico/"><img style="float: left; max-height:3em;padding-right:1em;" src="http://somebooks.es/wp-content/uploads/2018/05/android.png"> Aprende a programar en Android:       <br>Nivel básico</a></li>
+	<li id="menu-item-10103" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10103"><a title="Sistemas Operativos en Red" href="http://somebooks.es/sistemas-operativos-en-red/"><img style="float: left; max-height:3em;padding-right:1em;" src="http://somebooks.es/wp-content/uploads/2018/05/sor.png"> Sistemas Operativos <br>en Red</a></li>
+	<li id="menu-item-10104" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10104"><a title="Sistemas Operativos en Red (2ª edición)" href="http://somebooks.es/sistemas-operativos-red-2a-edicion/"><img style="float: left; max-height:3em;padding-right:1em;" src="http://somebooks.es/wp-content/uploads/2018/05/sor-v2.png"> Sistemas Operativos <br>en Red (2ª edición)</a></li>
+	<li id="menu-item-10105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10105"><a title="Conceptos básicos sobresistemas operativos" href="http://somebooks.es/conceptos-basicos-sobre-sistemas-operativos/"><img style="float: left; max-height:3em;padding-right:1em;" src="http://somebooks.es/wp-content/uploads/2018/05/cbso.png"> Conceptos básicos sobre<br>sistemas operativos</a></li>
+	<li id="menu-item-10106" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10106"><a title="Tips &amp; Tricks (Edición para Linux)" href="http://somebooks.es/tips-tricks-edicion-para-linux/"><img style="float: left; max-height:3em;padding-right:1em;" src="http://somebooks.es/wp-content/uploads/2018/05/ttl.png"> Tips &#038; Tricks <br>(Edición para Linux)</a></li>
+	<li id="menu-item-10107" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10107"><a title="Tips &amp; Tricks (Edición para Windows)" href="http://somebooks.es/tips-tricks-edicion-para-windows/"><img style="float: left; max-height:3em;padding-right:1em;" src="http://somebooks.es/wp-content/uploads/2018/05/ttw.png"> Tips &#038; Tricks <br>(Edición para Windows)</a></li>
+	<li id="menu-item-10108" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10108"><a title="Introducción a las redes de ordenadores" href="http://somebooks.es/introduccion-las-redes-ordenadores/"><img style="float: left; max-height:3em;padding-right:1em;" src="http://somebooks.es/wp-content/uploads/2018/05/ialrdo.png"> Introducción a las <br>redes de ordenadores</a></li>
+	<li id="menu-item-10109" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10109"><a title="Introducción a la virtualización" href="http://somebooks.es/introduccion-la-virtualizacion/"><img style="float: left; max-height:3em;padding-right:1em;" src="http://somebooks.es/wp-content/uploads/2018/05/ialv.png"> Introducción a la virtualización</a></li>
+	<li id="menu-item-10110" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10110"><a title="Scripts en PowerShell: Guia para principiantes" href="http://somebooks.es/scripts-powershell-guia-principiantes/"><img style="float: left; max-height:3em;padding-right:1em;" src="http://somebooks.es/wp-content/uploads/2018/05/spspp.png"> Scripts en PowerShell: <br>Guia para principiantes</a></li>
+</ul>
+</li>
+<li id="menu-item-9845" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-9845"><a title="Acerca de SomeBooks.es" href="http://somebooks.es/hello-world-2/">Acerca de SomeBooks.es</a></li>
+</ul></div>					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="sr-only">Cambiar modo de navegación</span>
+					</button>
+								</div>
+
+					</nav>
+		<div style="display: none"></div>		</header>
+<div id="primary" class="boxed-layout-header page-header header-small" data-parallax="active"><div class="header-filter" style="background-image: url(http://somebooks.es/wp-content/uploads/2018/07/fondo4-1.png);"></div></div>
+<div class="main  main-raised no-content">
+	<div class="blog-post blog-post-wrapper">
+		<div class="container">
+			<div class="row">
+		<div class=" single-post-wrap col-md-8">
+		
+			<article id="post-5750" class="section section-text">
+				<h1 class="hestia-title title-in-content entry-title">Capítulo 12: Integración de redes mixtas con Windows y Linux</h1><p class="author meta-in-content">Publicado por <a href="http://somebooks.es/author/editor/" class="vcard author"><strong class="fn">P. Ruiz</strong></a> en <time class="date updated published" datetime="2015-02-11T19:04:06+00:00">11 febrero, 2015</time></p>
+<p style="text-align: right;"><a href="http://somebooks.es/?p=4787#conte">
+<img alt="" src="http://somebooks.es/wp-content/uploads/2014/08/volver.png">
+</a></p><div class="Xtoo9rYq" style="clear:both;float:left;width:100%;margin:0 0 20px 0;"><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-5265889913168195" data-ad-slot="3006682462"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+
+<h2>12.7. Crear un controlador de dominio de Active Directory con Samba 4 en Ubuntu 14.04 LTS</h2>
+Resulta evidente que la posibilidad de realizar en <em>GNU/Linux</em> un reemplazo completo de las funciones de <em>Directorio Activo</em> de <em>Windows Server</em>, nos ofrece un gran abanico de posibilidades a la hora de gestionar los equipos, usuarios y otros recursos de una red local. Con él, podemos crear una implementación y una administración de la red muy productivas. Sobre todo cuando usamos clientes con alguna versión de <em>Windows</em>.
+
+En esta segunda mitad del capítulo usaremos <em>Samba 4</em> estudiaremos cómo hacer que los equipos clientes con <em>Microsoft Windows</em> puedan iniciar sesión en el dominio <em>Linux</em> y utilizar sus recursos sin notar la diferencia con un servidor <em>Windows Server</em>.
+
+En particular, el servidor que implementaremos atenderá a los siguientes datos:
+<ul>
+	<li>Nombre del controlador de dominio de <em>Active Directory</em>: SMB-DC</li>
+	<li>Nombre DNS del dominio de <em>Active Directory</em>: somebooks.lan</li>
+	<li>Nombre del Reino Kerberos: somebooks.lan</li>
+	<li>Nombre NetBIOS del dominio: somebooks</li>
+	<li>Dirección IP fija del servidor: 192.168.1.15</li>
+	<li>Rol del servidor: Domain Controller (DC)</li>
+	<li>Reenviador DNS:192.168.1.1</li>
+</ul>
+Además, en el siguiente apartado veremos cómo utilizar la <em>Herramientas de administración remota del servidor para Windows 8.1</em> para administrar el controlador de <em>dominio Samba</em> como si se tratase de un servidor <em>Windows</em> cualquiera.
+
+Los pasos que vamos a seguir para completar la tarea son los siguientes:
+<ul>
+	<li>Preparar el equipo</li>
+	<li>Instalar los paquetes necesarios</li>
+	<li>Establecer parámetros para el sistema de archivos</li>
+	<li>Configurar <em>NTP</em></li>
+	<li>Instalar y configurar <em>Samba</em></li>
+	<li>Comprobar el funcionamiento del servidor <em>DNS</em></li>
+	<li>Configurar y comprobar el funcionamiento de <em>Kerberos</em></li>
+</ul>
+Una vez que hemos fijado los objetivos, comencemos&#8230;
+<h3>Preparar el equipo</h3>
+Lo primero, antes de comenzar la tarea, será asegurarnos de que el equipo se encuentra perfectamente actualizado. Para lograrlo, basta con escribir en la consola una orden como la siguiente:
+<pre class="codigo">sudo apt-get update &amp;&amp; sudo apt-get upgrade</pre>
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">1</p>
+
+</div>
+<div id="figura-texto">
+
+Para ejecutarla, necesitaremos privilegios de administración
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-073.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-073.png" width="100%"> </a></div>
+</div>
+</div>
+Una vez concluida la actualización, el segundo paso será adecuar el nombre del equipo a nuestras necesidades (recuerda que debe llamarse <span style="font-style: italic;">smb-dc</span>). supongo que, a estas alturas, ya sabes que esto se hace editando el archivo <span style="font-family: monospace; font-weight: bold;">/etc/hostname</span>, para lo que ejecutamos la siguiente orden:
+<pre class="codigo">sudo gedit /etc/hostname</pre>
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">2</p>
+
+</div>
+<div id="figura-texto">
+
+Escribimos la orden en una ventana de <em>Terminal</em> y pulsamos la tecla <em>Intro</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-074.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-074.png" width="100%"> </a></div>
+</div>
+</div>
+Cuando terminemos, guardamos los cambios y cerramos la ventana.
+
+Como sabes, <em>Ubuntu</em> almacena, en el archivo <span style="font-family: monospace; font-weight: bold;">/etc/hosts</span>, una relación de direcciones IP con sus correspondientes nombres lógicos. De esta forma, cuando hagamos referencia a un ordenador que esté identificado en esta lista, el acceso es inmediato, sin que necesitemos la mediación de un servidor DNS para resolverlo.
+
+Lógicamente, este archivo contiene una referencia al nombre antiguo del propio servidor, por lo que también habrá que editarlo para inlcuir el nombre nuevo. Además, aprovecharemos para incluir tanto el nombre DNS como el nombre NetBIOS (smb-dc.somebooks.lan y smb-dc).
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">3</p>
+
+</div>
+<div id="figura-texto">
+
+Editamos el archivo <span style="font-family: monospace; font-weight: bold;">/etc/hosts</span> e incluimos los nuevos valores
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-075.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-075.png" width="100%"> </a></div>
+</div>
+</div>
+Lo siguiente será configurar las características de red según las necesidades del servidor. Recuerda que un servidor debe tener IP fija.
+
+En <em>Ubuntu</em>, la configuración de red se almacena en el archivo <span style="font-family: monospace; font-weight: bold;">/etc/network/interfaces</span> por lo que, para editarlo, abriremos una ventana de terminal y escribiremos una orden como esta:
+<pre class="codigo">sudo gedit /etc/network/interfaces</pre>
+El contenido del archivo será algo así:
+<pre class="codigo">auto lo
+iface lo inet loopback
+auto eth0
+iface eth0 inet static
+  address 192.168.1.15
+  netmask 255.255.255.0
+  network 192.168.1.0
+  broadcast 192.168.1.255
+  gateway 192.168.1.1
+dns-nameservers 192.168.1.15 192.168.1.1
+dns-search somebooks.lan</pre>
+Observa que, además de incluir la nueva dirección <em>IP</em>, y el resto de los valores habituales, hemos aprovechado para añadir como servidor de nombres al propio equipo (<span style="font-family: monospace; font-weight: bold;">dns-nameservers</span>). Esto es porque, aunque aún no actúa como servidor <em>DNS</em>, lo hará cuando hayamos instalado <em>Samba 4</em>. Para evitar que deje de funcionar la resolución de nombres, hemos añadido el servidor antiguo como valor alternativo.
+
+También añadimos la entrada <span style="font-family: monospace; font-weight: bold;">dns-search</span> para definir el sufijo de búsqueda <em>DNS</em> que pretendemos que tenga nuestro dominio <em>Samba</em>.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">4</p>
+
+</div>
+<div id="figura-texto">
+
+Cuando lo hayamos escrito, podemos guardar los cambios y salir del editor.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-076.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-076.png" width="100%"> </a></div>
+</div>
+</div>
+<h3>Instalar los paquetes necesarios</h3>
+<em>Samba</em> necesita disponer de algunos paquetes que deberán estar preinstalados antes de comenzar con el proceso de configuración, aunque todos ellos están el los repositorios. Por lo tanto, será suficiente con usar un comando como el siguiente:
+<pre class="codigo">sudo apt-get install attr build-essential libacl1-dev 
+libattr1-dev libblkid-dev libgnutls-dev libreadline-dev python-dev 
+libpam0g-dev python-dnspython gdb pkg-config libpopt-dev libldap2-dev 
+dnsutils libbsd-dev attr krb5-user docbook-xsl libcups2-dev acl ntp</pre>
+Como son muchos paquetes, es posible que te preocupe desconocer lo que hacen en tu sistema, así es que vamos a explicar por encima cuál es la función de cada uno de ellos:
+
+<a title="Dependencias de Samba 4" href="file:///home/homer/Dropbox/Sistemas%20operativos%20en%20red%20-%20edici%C3%B3n%202/cap12-Integraci%C3%B3n%20de%20redes%20mixtas%20con%20Windows%20y%20Linux/http://somebooks.es/wp-content/uploads/2015/02/cap12v2-077.png"><img class="img-centro" alt="dependencias" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-077.png"></a>
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">1</p>
+
+</div>
+<div id="figura-texto">
+
+Cuando estés listo, sólo tienes que escribir, o copiar, el comando anterior y pulsar la tecla <em>Intro</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-078.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-078.png" width="100%"> </a></div>
+</div>
+</div>
+Cuando llegue el momento de instalar <em>Kerberos</em>, nos preguntará por el reino (<em>realm</em> en inglés). En realidad, se refiere al nombre del dominio y, en el caso de nuestro ejemplo, escribiremos SOMEBOOKS.LAN.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">2</p>
+
+</div>
+<div id="figura-texto">
+
+A continuación, pulsamos la tecla de tabulación para seleccionar <em>Aceptar</em> y a continuación la tecla <em>Intro</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-079.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-079.png" width="100%"> </a></div>
+</div>
+</div>
+A continuación, el instalador nos solicita el nombre de los <em>servidores de Kerberos para nuestro reino</em>. En este caso, se refiere a los controladores de dominio que tengamos definidos. En nuestro ejemplo sólo tenemos uno y se llama SMB-DC.SOMEBOOKS.LAN, por lo que procedemos a escribir su nombre.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">3</p>
+
+</div>
+<div id="figura-texto">
+
+Como antes, nos desplazamos hasta <em>Aceptar</em> y pulsamos la tecla <em>Intro</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-080.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-080.png" width="100%"> </a></div>
+</div>
+</div>
+Por último, nos solicita el <em>servidor administrativo para nuestro reino de Kerberos</em>. como sólo tenemos uno, volvemos a escribir su nombre (SMB-DC.SOMEBOOKS.LAN).
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">4</p>
+
+</div>
+<div id="figura-texto">
+
+Y de nuevo seleccionamos <em>Aceptar</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-081.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-081.png" width="100%"> </a></div>
+</div>
+</div>
+<h3>Establecer parámetros para el sistema de archivos</h3>
+<div class="cuadro-recuerda">
+
+<em>POSIX</em> (acrónimo de <em>Portable Operating System Interface</em>) es un estándar de la <em>IEEE</em> con una serie de especificaciones para ofrecer compatibilidad entre sistemas operativos.
+
+La X final del nombre hace referencia a su origen: el sistema operativo Unix
+
+</div>
+<em>Samba 4</em> utiliza algunos atributos extendidos de <em>ext4</em> que no suelen venir activados de forma predeterminada. En particular las opciones <span style="font-family: monospace; font-weight: bold;">user_xattr</span> y <span style="font-family: monospace; font-weight: bold;">acl</span> son necesarias  para utilizar las capacidades de archivo <em>POSIX</em> y <span style="font-family: monospace; font-weight: bold;">barrier=1</span> permite que, en algunos discos duros, el sistema de archivos ext4 sea más fiable cuando se produzca un corte de energía inesperado.
+
+Como de costumbre, recurrimos a gEdit para realizar las modificaciones:
+<pre class="codigo">sudo gedit /etc/fstab</pre>
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">1</p>
+
+</div>
+<div id="figura-texto">
+
+Editamos el archivo con privilegios de administración.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-082.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-082.png" width="100%"> </a></div>
+</div>
+</div>
+Cuando se abra el archivo, buscamos la línea que hace referencia al sistema de archivos que vamos a modificar
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">2</p>
+
+</div>
+<div id="figura-texto">
+
+En este caso, buscamos el volumen formateado con <em>ext4</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-083.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-083.png" width="100%"> </a></div>
+</div>
+</div>
+Finalmente, incluimos en la línea los parámetros que hemos indicado más arriba.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">3</p>
+
+</div>
+<div id="figura-texto">
+
+Por último, guardamos los cambios y cerramos la ventana del editor.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-084.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-084.png" width="100%"> </a></div>
+</div>
+</div>
+Para que los cambios en <em>fstab</em> sean efectivos es suficiente con volver a montar el volumen. Sin embargo, si reiniciamos el equipo, también volveremos a cargar el núcleo del sistema, que se habrá actualizado en el apartado anterior.
+
+Por lo tanto, en la ventana de Terminal, escribimos un comando como este:
+<pre class="codigo">sudo shutdown -r 0</pre>
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">4</p>
+
+</div>
+<div id="figura-texto">
+
+Reiniciamos el equipo
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-085.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-085.png" width="100%"> </a></div>
+</div>
+</div>
+<h3>Configurar NTP</h3>
+Seguro que ya sabes que ntp (Network Time Protocol) es el responsable de sincronizar el funcionamiento del reloj interno del sistema de acuerdo con algún servidor horario disponible en <em>Internet</em>.
+
+Como recordarás de la primera parte de este libro, es muy importante para el correcto funcionamiento de la autenticación con <em>Kerberos</em> que el reloj de los equipos esté debidamente ajustado. Por ese motivo, comenzaremos por sincronizar el reloj del servidor.
+
+Lo primero será parar el servicio:
+<pre class="codigo">sudo service ntp stop</pre>
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">1</p>
+
+</div>
+<div id="figura-texto">
+
+Escribimos el comando y pulsamos la tecla <em>Intro</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-086.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-086.png" width="100%"> </a></div>
+</div>
+</div>
+Lo siguiente será sincronizar el reloj de forma manual. El objetivo es asegurarnos de que, en este momento, el reloj local está perfectamente sincronizado. Para lograrlo usaremos el servidor horario de <em>Ubuntu</em>:
+<pre class="codigo">sudo ntpdate -B 0.ubuntu.pool.ntp.org</pre>
+La opción -B garantiza que la hora estará siempre afinada, manteniendo la diferencia máxima en +-128 ms.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">2</p>
+
+</div>
+<div id="figura-texto">
+
+Al ejecutar el comando <span style="font-family: monospace; font-weight: bold;">ntpdate</span> obtenemos la fecha y la hora actual y nos informa de que el<em> socket NTP</em> está en uso.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-087.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-087.png" width="100%"> </a></div>
+</div>
+</div>
+Ya sólo queda volver a activar el servicio ntp:
+<pre class="codigo">sudo service ntp start</pre>
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">3</p>
+
+</div>
+<div id="figura-texto">
+
+Observamos la respuesta para asegurarnos de que se activa sin problemas.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-088.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-088.png" width="100%"> </a></div>
+</div>
+</div>
+<h3>Instalar y configurar Samba</h3>
+Bueno, en realidad, todo lo que hemos hecho hasta ahora ha sido prepararnos para el paso que estamos a punto de dar. Será en este paso donde instalemos realmente <em>Samba</em> y donde realizaremos su configuración básica.
+
+Comenzaremos por instalar los paquetes necesarios:
+<pre class="codigo">sudo apt-get install samba smbclient</pre>
+Como resulta evidente <strong><span style="font-family: monospace;">samba</span></strong> es el paquete principal de la instalación. Por su parte, <strong><span style="font-family: monospace;">smbclient</span></strong> ofrece herramientas como <strong><span style="font-family: monospace;">findsmb</span></strong>, <strong><span style="font-family: monospace;">smbspool</span></strong>, <strong><span style="font-family: monospace;">smbtree</span></strong>, <strong><span style="font-family: monospace;">smbcquotas</span></strong>, entre otras.
+
+Además, al iniciar la instalación, el sistema nos informa de que hará falta resolver algunas dependencias.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">1</p>
+
+</div>
+<div id="figura-texto">
+
+Instalamos todos los paquetes.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-089.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-089.png" width="100%"> </a></div>
+</div>
+</div>
+Antes de proceder a configurar <em>Samba</em>, debemos cambiar de nombre (o de sitio) el archivo <em>smb.conf</em> que contiene la configuración predeterminada. De esta forma, evitamos que <em>Samba</em> intente usarlo durante el proceso de configuración y estaremos seguros de que todos los datos del nuevo archivo de configuración se producen desde cero. Además, también podremos recuperarlo en caso de que algo salga mal.
+
+Para cambiar el nombre al archivo, sólo tendremos que escribir la siguiente orden:
+<pre class="codigo">sudo mv /etc/samba/smb.conf /etc/samba/smb.conf.old</pre>
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">2</p>
+
+</div>
+<div id="figura-texto">
+
+Renombramos el archivo <span style="font-family: monospace; font-weight: bold;">smb.conf</span>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-090.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-090.png" width="100%"> </a></div>
+</div>
+</div>
+Después de esto, ya estamos listos para promover nuestro equipo como controlador de un dominio<em> Samba 4</em> que actúe como un reemplazo completo de un servidor de dominio de <em>Active Directory</em>. Para lograrlo, usaremos el comando <span style="font-family: monospace; font-weight: bold;">samba-tool domain provision</span>, y lo haremos de forma interactiva, para que sea él quien nos sugiera los valores predeterminados. Así, si éstos coinciden con los que nosotros esperamos, será muy probable que los pasos anteriores han sido los correctos.
+
+Así pues, nos dirigimos a la terminal y escribimos la siguiente orden:
+<pre class="codigo">sudo samba-tool domain provision --use-rfc2307 --interactive</pre>
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">3</p>
+
+</div>
+<div id="figura-texto">
+
+Iniciamos la provisión del controlador de dominio.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-091.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-091.png" width="100%"> </a></div>
+</div>
+</div>
+Como puedes ver en la imagen siguiente, los valores predeterminados del comando son los esperados para nuestro ejemplo:
+<ul>
+	<li>Realm: SOMEBOOKS.LAN (el nombre del dominio)</li>
+	<li>Domain: SOMEBOOKS (el nombre <em>NetBIOS</em> del dominio)</li>
+	<li>Server Role: dc (domain controler, es decir, controlador de dominio)</li>
+	<li>DNS backend: SAMBA_INTERNAL (el servidor <em>DNS</em> que utilizaremos, que será el propio <em>Samba</em>)</li>
+	<li>DNS forwarder IP address: 192.168.1.1 (el reenviador <em>DNS</em>, es decir, el servidor al que recurrirá cuando no sepa resolver alguna referencia)</li>
+</ul>
+Por último, nos pedirá, como siempre por duplicado, la contraseña para el administrador.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">4</p>
+
+</div>
+<div id="figura-texto">
+
+Si todo es correcto, nos limitamos a pulsar la tecla <em>Intro</em> en cada entrada (salvo en la contraseña, claro)
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-092.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-092.png" width="100%"> </a></div>
+</div>
+</div>
+Después del proceso de configuración, el comando nos ofrece un resumen de las acciones que ha llevado a cabo para que podamos comprobarlas con detenimiento
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">5</p>
+
+</div>
+<div id="figura-texto">
+
+Nos aseguramos de que los valores son los esperados.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-093.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-093.png" width="100%"> </a></div>
+</div>
+</div>
+Como recordarás, al principio, durante la configuración del archivo <span style="font-family: monospace; font-weight: bold;">/etc/network/interfaces</span> añadimos a la variable <span style="font-family: monospace; font-weight: bold;">dns-nameservers</span> el servidor <em>DNS</em> predeterminado de nuestra red. El motivo era que nuestro servidor aún no actuaba como servidor <em>DNS</em> y necesitábamos seguir accediendo a Internet.
+
+Sin embargo, a partir del próximo reinicio, nuestro flamante servidor estará listo para realizar también funciones de <em>DNS</em>, por lo que podremos eliminar del archivo <span style="font-family: monospace; font-weight: bold;">/etc/network/interfaces</span> la dirección <em>IP</em> del servidor <em>DNS</em> predeterminado.
+
+Así pues, comenzamos editando el archivo:
+<pre class="codigo">sudo gedit /etc/network/interfaces</pre>
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">6</p>
+
+</div>
+<div id="figura-texto">
+
+Como venimos haciendo en el resto del capítulo, usamos el editor <em>gEdit</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-094.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-094.png" width="100%"> </a></div>
+</div>
+</div>
+A continuación, quitamos el segundo valor de la variable <span style="font-family: monospace; font-weight: bold;">dns-nameservers</span>.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">7</p>
+
+</div>
+<div id="figura-texto">
+
+Cuando lo hayamos hecho, guardamos los cambios y cerramos la ventana
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-095.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-095.png" width="100%"> </a></div>
+</div>
+</div>
+Ya sólo queda reiniciar el equipo para poder comprobar si todo funciona correctamente:
+<pre class="codigo">sudo shutdown -r 0</pre>
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">8</p>
+
+</div>
+<div id="figura-texto">
+
+Reiniciamos el equipo
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-096.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-096.png" width="100%"> </a></div>
+</div>
+</div>
+<h3>Comprobar el funcionamiento del servidor DNS</h3>
+Para que <em>Samba 4</em> funcione correctamente, es muy importante que el servidor <em>DNS</em> que tenga asociado también lo haga.
+
+Por este motivo, una vez instalado <em>Samba</em> y reiniciado el servidor, lo primero que haremos será comprobar el <em>DNS</em> interno del propio <em>Samba</em>. En particular, los registros <em>SRV</em>.
+
+Los registros <em>SRV</em> son los encargados de almacenar, dentro de la base de datos <em>DNS</em>, la relación entre el nombre de un servicio y el nombre <em>DNS</em> del ordenador que ofrece dicho servicio.
+
+Lo primero será comprobar el servicio <em>LDAP</em> sobre el protocolo <em>TCP</em>, para lo que abriremos de nuevo la terminal y escribiremos la siguiente orden:
+<pre class="codigo">host -t SRV _ldap._tcp.somebooks.lan</pre>
+Si todo es correcto, recibiremos una respuesta como esta:
+<pre class="codigo">_ldap._tcp.somebooks.lan has SRV record 0 100 389 smb-dc.somebooks.lan</pre>
+Lo que significará que todo funciona como debe.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">1</p>
+
+</div>
+<div id="figura-texto">
+
+Observamos que la salida del comando no produce ningún error.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-097.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-097.png" width="100%"> </a></div>
+</div>
+</div>
+A continuación, comprobaremos el registro <em>SRV</em> para el protocolo <em>Kerberos</em> sobre <em>UDP</em>, para lo que usamos la siguiente orden:
+<pre class="codigo">host -t SRV _kerberos._udp.somebooks.lan</pre>
+La respuesta debe ser parecida a la anterior, y podremos comprobar que el registro <em>SRV</em> es correcto:
+<pre class="codigo">_kerberos._udp.somebooks.lan has SRV record 0 100 88 smb-dc.somebooks.lan</pre>
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">2</p>
+
+</div>
+<div id="figura-texto">
+
+De nuevo comprobamos que no se ha producido ningún error en la salida.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-098.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-098.png" width="100%"> </a></div>
+</div>
+</div>
+Por último, comprobamos la resolución del nombre de nuestro servidor:
+<pre class="codigo">host -t A smb-dc.somebooks.lan</pre>
+&#8230; Y si todo va bien, la respuesta debe ser parecida a la siguiente:
+<pre class="codigo">smb-dc.somebooks.lan has address 192.168.1.15</pre>
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">3</p>
+
+</div>
+<div id="figura-texto">
+
+Nos aseguramos de que la resolución del nombre del servidor también es correcta.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-099.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-099.png" width="100%"> </a></div>
+</div>
+</div>
+<h3>Configurar y comprobar el funcionamiento de Kerberos</h3>
+Durante la instalación de <em>Samba</em>, se habrá generado un archivo de configuración para <em>Kerberos</em> que será el que debamos usar con el servidor. Sin embargo, el propio <em>Kerberos</em> incorpora su propio archivo de configuración que ahora debemos descartar.
+
+Como ya hicimos con el archivo de configuración predeterminado de <em>Samba</em>, basta con cambiar su nombre para que <em>Kerberos</em> no lo encuentre. Así, podremos recuperarlo más adelante si fuese necesario:
+<pre class="codigo">sudo mv /etc/krb5.conf /etc/krb5.conf.old</pre>
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">1</p>
+
+</div>
+<div id="figura-texto">
+
+Cambiamos el nombre del archivo <span style="font-family: monospace; font-weight: bold;">/etc/krb5.conf</span>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-100.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-100.png" width="100%"> </a></div>
+</div>
+</div>
+Para sustituir el archivo de configuración original por el que ha creado <em>Samba</em> al instalarse, crearemos un enlace simbólico. Así, cuando <em>Kerberos</em> busque su archivo de configuración, encontrará el generado por <em>Samba</em> que, en realidad, se encuentra en el directorio <span style="font-family: monospace; font-weight: bold;">/var/lib/samba/private/</span>.
+
+Para lograrlo, usaremos el siguiente comando:
+<pre class="codigo">sudo ln -sf /var/lib/samba/private/krb5.conf /etc/krb5.conf</pre>
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">2</p>
+
+</div>
+<div id="figura-texto">
+
+Creamos el enlace simbólico.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-101.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-101.png" width="100%"> </a></div>
+</div>
+</div>
+Con esto habremos terminado la tarea, pero como el funcionamiento de <em>Kerberos</em> es muy importante para el servidor, realizaremos unas comprobaciones finales para asegurarnos de que la autenticación está funcionando de forma adecuada.
+
+Lo primero será comprobar que el programa <em>kinit</em>, que es el encargado de obtener y almacenar en caché las autenticaciones de los usuarios, reconoce correctamente al administrador de <em>Samba</em>. Para conseguirlo, escribimos lo siguiente:
+<pre class="codigo">kinit administrator@SOMEBOOKS.LAN</pre>
+En respuesta al comando deberemos usar la contraseña que escribimos, más arriba, al promocionar el equipo como controlador de dominio <em>Samba</em> con el comando <span style="font-family: monospace; font-weight: bold;">samba-tool domain provision</span>.
+
+Si todo va bien, <em>kinit</em> nos responde con la fecha y la hora en la que caducará la contraseña que acabamos de introducir.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">3</p>
+
+</div>
+<div id="figura-texto">
+
+Lo importante es comprobar que no se han producido errores durante la autenticación.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-102.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-102.png" width="100%"> </a></div>
+</div>
+</div>
+También podemos usar el comando klist para consultar las autenticaciones que hay guardadas actualmente en la caché de <em>Kerberos</em>.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">4</p>
+
+</div>
+<div id="figura-texto">
+
+Ejecutamos el comando <span style="font-family: monospace; font-weight: bold;">klist</span>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-103.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-103.png" width="100%"> </a></div>
+</div>
+</div>
+Ya casi hemos terminado con el servidor Samba. Sólo nos queda asegurarnos de que los servicios de samba funcionan como deben. Una buena forma de lograrlo es utilizando el comando smbclient para comprobar los servicios que ofrece el servidor en la red. Para conseguirlo, usaremos el comando <span style="font-family: monospace; font-weight: bold;">smbclient</span>:
+<pre class="codigo">sudo smbclient -L smb-dc.somebooks.lan -U%</pre>
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">5</p>
+
+</div>
+<div id="figura-texto">
+
+El comando nos responde con los datos de la conexión.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-104.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-104.png" width="100%"> </a></div>
+</div>
+</div>
+A continuación, iniciamos sesión en el servidor usando la cuenta de administración que se ha creado de forma automática.
+
+El <em>prompt</em> cambia para indicar que es el subsistema de Samba quien espera ordenes, por lo que la <em>autenticación</em> habrá sido correcta.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">6</p>
+
+</div>
+<div id="figura-texto">
+
+Samba está listo para recibir órdenes.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-105.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-105.png" width="100%"> </a></div>
+</div>
+</div>
+A partir de aquí, podríamos comenzar a administrar el servidor desde la línea de comandos. Sin embargo, pienso que resultará más gratificante hacerlo desde la interfaz gráfica de un equipo cliente usando la herramienta de administración remota de Microsoft. Esto será lo que aprendamos a conseguir en el siguiente apartado.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">6</p>
+
+</div>
+<div id="figura-texto">
+
+De momento, usamos la orden <span style="font-family: monospace; font-weight: bold;">quit</span> para salir.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-106.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-106.png" width="100%"> </a></div>
+</div>
+</div>
+<p style="text-align: right;"><a href="http://somebooks.es/?p=4787#conte">
+<img alt="" src="http://somebooks.es/wp-content/uploads/2014/08/volver.png">
+</a></p><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><h3 class="sd-title">Compártelo:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-5750" class="share-twitter sd-button share-icon no-text" href="http://somebooks.es/capitulo-12-integracion-de-redes-mixtas-con-windows-y-linux/?share=twitter" rel="noopener noreferrer" target="_blank" title="Haz clic para compartir en Twitter"><span></span><span class="sharing-screen-reader-text">Haz clic para compartir en Twitter (Se abre en una ventana nueva)</span></a></li><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-5750" class="share-facebook sd-button share-icon no-text" href="http://somebooks.es/capitulo-12-integracion-de-redes-mixtas-con-windows-y-linux/?share=facebook" rel="noopener noreferrer" target="_blank" title="Haz clic para compartir en Facebook"><span></span><span class="sharing-screen-reader-text">Haz clic para compartir en Facebook (Se abre en una ventana nueva)</span></a></li><li class="share-google-plus-1"><a rel="nofollow" data-shared="sharing-google-5750" class="share-google-plus-1 sd-button share-icon no-text" href="http://somebooks.es/capitulo-12-integracion-de-redes-mixtas-con-windows-y-linux/?share=google-plus-1" rel="noopener noreferrer" target="_blank" title="Haz clic para compartir en Google+"><span></span><span class="sharing-screen-reader-text">Haz clic para compartir en Google+ (Se abre en una ventana nueva)</span></a></li><li class="share-end"></li></ul></div></div></div>
+<div id='jp-relatedposts' class='jp-relatedposts'>
+	<h3 class="jp-relatedposts-headline"><em>Relacionado</em></h3>
+</div><div class="text-center"> <ul class="nav pagination pagination-primary"> <li><a href="..\index.html">1</a></li> <li><a href="..\2\index.html">2</a></li> <li><a href="..\3\index.html">3</a></li> <li><a href="..\4\index.html">4</a></li> <li><a href="..\5\index.html">5</a></li> <li><a href="..\6\index.html">6</a></li> <li><span class="page-numbers current">7</span></li> <li><a href="..\8\index.html">8</a></li> <li><a href="..\9\index.html">9</a></li></ul> </div>			</article>
+			
+		<div class="section section-blog-info">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="entry-categories">Categorías:						<span class="label label-primary"><a href="http://somebooks.es/category/sistemas-operativos-en-red-2a-ed/">Sistemas Operativos en Red (2ª ed.)</a></span>					</div>
+					<div class="entry-tags">Etiquetas: <span class="entry-tag"><a href="http://somebooks.es/tag/14-04/" rel="tag">14.04</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/active-directory/" rel="tag">Active directory</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/ad-dc/" rel="tag">AD DC</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/compartir/" rel="tag">compartir</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/configuracion/" rel="tag">configuración</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/domain-controler/" rel="tag">Domain Controler</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/free/" rel="tag">free</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/gratis/" rel="tag">gratis</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/libro/" rel="tag">Libro</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/lts/" rel="tag">LTS</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/manual/" rel="tag">manual</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/problemas/" rel="tag">problemas</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/samba/" rel="tag">Samba</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/server/" rel="tag">Server</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/servicios/" rel="tag">servicios</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/tutorial/" rel="tag">tutorial</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/ubuntu/" rel="tag">ubuntu</a></span></div>				</div>
+				
+        <div class="col-md-6">
+            <div class="entry-social">
+                <a target="_blank" rel="tooltip" data-original-title="Compartir en Facebook" class="btn btn-just-icon btn-round btn-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://somebooks.es/capitulo-12-integracion-de-redes-mixtas-con-windows-y-linux/">
+                   <i class="fa fa-facebook"></i>
+                </a>
+                
+                <a target="_blank" rel="tooltip" data-original-title="Compartir en Twitter" class="btn btn-just-icon btn-round btn-twitter" href="https://twitter.com/home?status=Capítulo%2012:%20Integración%20de%20redes%20mixtas%20con%20Windows%20y%20Linux%20-%20http://somebooks.es/capitulo-12-integracion-de-redes-mixtas-con-windows-y-linux/">
+                   <i class="fa fa-twitter"></i>
+                </a>
+                
+                <a target="_blank" rel="tooltip" data-original-title=" Compartir en Google+" class="btn btn-just-icon btn-round btn-google" href="https://plus.google.com/share?url=http://somebooks.es/capitulo-12-integracion-de-redes-mixtas-con-windows-y-linux/">
+                   <i class="fa fa-google"></i>
+               </a>
+            </div>
+		</div>			</div>
+			<hr>
+					</div>
+			</div>
+		<div class="col-md-3 blog-sidebar-wrapper col-md-offset-1 ">
+		<aside id="secondary" class="blog-sidebar" role="complementary">
+			<div id="search-5" class="widget widget_search"><form role="search" method="get" class="search-form" action="http://somebooks.es/">
+				<label>
+					<span class="screen-reader-text">Buscar:</span>
+					<input type="search" class="search-field" placeholder="Buscar &hellip;" value="" name="s">
+				</label>
+				<input type="submit" class="search-submit" value="Buscar">
+			</form></div><div id="wpcom_social_media_icons_widget-3" class="widget widget_wpcom_social_media_icons_widget"><ul><li><a href="https://www.facebook.com/Somebookses-474938955936480/" class="genericon genericon-facebook" target="_blank"><span class="screen-reader-text">Ver perfil de Somebookses-474938955936480 en Facebook</span></a></li><li><a href="https://twitter.com/SomeBooks_es/" class="genericon genericon-twitter" target="_blank"><span class="screen-reader-text">Ver perfil de SomeBooks_es en Twitter</span></a></li></ul></div><div id="custom_html-5" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><p style="text-align: center">
+
+<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Bloque01 -->
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5265889913168195" data-ad-slot="4335950463"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	</p></div></div>		</aside><!-- .sidebar .widget-area -->
+	</div>
+	</div>
+
+		</div>
+	</div>
+</div>
+
+			<div class="section related-posts">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h2 class="hestia-title text-center">Entradas relacionadas</h2>
+							<div class="row">
+																	<div class="col-md-4">
+										<div class="card card-blog">
+																							<div class="card-image">
+													<a href="http://somebooks.es/cambiar-el-tiempo-que-ubuntu-18-04-lts-recuerda-la-contrasena/" title="Cambiar el tiempo que Ubuntu 18.04 LTS recuerda la contraseña">
+														<img width="360" height="240" src="http://somebooks.es/wp-content/uploads/2018/07/Terminal-de-Ubuntu-b-360x240.png" class="attachment-hestia-blog size-hestia-blog wp-post-image" alt="" srcset="http://somebooks.es/wp-content/uploads/2018/07/Terminal-de-Ubuntu-b-360x240.png,http://somebooks.es/wp-content/uploads/2018/07/Terminal-de-Ubuntu-b-150x100.png,http://somebooks.es/wp-content/uploads/2018/07/Terminal-de-Ubuntu-b-300x200.png,http://somebooks.es/wp-content/uploads/2018/07/Terminal-de-Ubuntu-b.png" sizes="(max-width: 360px) 100vw, 360px" data-attachment-id="10443" data-permalink="http://somebooks.es/administrar-procesos-desde-la-linea-comandos-ubuntu-18-04-lts/terminal-de-ubuntu-b/" data-orig-file="http://somebooks.es/wp-content/uploads/2018/07/Terminal-de-Ubuntu-b.png" data-orig-size="750,501" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Terminal de Ubuntu-b" data-image-description="" data-medium-file="http://somebooks.es/wp-content/uploads/2018/07/Terminal-de-Ubuntu-b-300x200.png" data-large-file="http://somebooks.es/wp-content/uploads/2018/07/Terminal-de-Ubuntu-b.png">													</a>
+												</div>
+																						<div class="content">
+												<h6 class="category text-info"><a href="http://somebooks.es/category/sistemas-operativos-en-red-2a-ed/" title="Ver todos las entradas en Sistemas Operativos en Red (2ª ed.)">Sistemas Operativos en Red (2ª ed.)</a> </h6>
+												<h4 class="card-title">
+													<a class="blog-item-title-link" href="http://somebooks.es/cambiar-el-tiempo-que-ubuntu-18-04-lts-recuerda-la-contrasena/" title="Cambiar el tiempo que Ubuntu 18.04 LTS recuerda la contraseña" rel="bookmark">
+														Cambiar el tiempo que Ubuntu 18.04 LTS recuerda la contraseña													</a>
+												</h4>
+												<p class="card-description">Cuando utilizamos la orden&nbsp;sudo para ejecutar algún comando con privilegios administrativos, el sistema recuerda la contraseña durante los próximos 15 minutos (siempre que no cerremos la ventana de terminal donde la hemos escrito). Puedes abrir<a class="moretag" href="..\index.html"> Leer más&hellip;</a></p>
+											</div>
+										</div>
+									</div>
+																	<div class="col-md-4">
+										<div class="card card-blog">
+																							<div class="card-image">
+													<a href="http://somebooks.es/otras-opciones-del-disco-de-instalacion-en-ubuntu-18-04-lts/" title="Otras opciones del disco de instalación en Ubuntu 18.04 LTS">
+														<img width="360" height="240" src="http://somebooks.es/wp-content/uploads/2018/07/Ubuntu-b-360x240.png" class="attachment-hestia-blog size-hestia-blog wp-post-image" alt="" srcset="http://somebooks.es/wp-content/uploads/2018/07/Ubuntu-b-360x240.png,http://somebooks.es/wp-content/uploads/2018/07/Ubuntu-b-150x100.png,http://somebooks.es/wp-content/uploads/2018/07/Ubuntu-b-300x200.png,http://somebooks.es/wp-content/uploads/2018/07/Ubuntu-b.png" sizes="(max-width: 360px) 100vw, 360px" data-attachment-id="10429" data-permalink="http://somebooks.es/finalizar-programas-no-responden-ubuntu-18-04-lts/ubuntu-b-2/" data-orig-file="http://somebooks.es/wp-content/uploads/2018/07/Ubuntu-b.png" data-orig-size="750,501" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Ubuntu-b" data-image-description="" data-medium-file="http://somebooks.es/wp-content/uploads/2018/07/Ubuntu-b-300x200.png" data-large-file="http://somebooks.es/wp-content/uploads/2018/07/Ubuntu-b.png">													</a>
+												</div>
+																						<div class="content">
+												<h6 class="category text-info"><a href="http://somebooks.es/category/sistemas-operativos-en-red-2a-ed/" title="Ver todos las entradas en Sistemas Operativos en Red (2ª ed.)">Sistemas Operativos en Red (2ª ed.)</a> </h6>
+												<h4 class="card-title">
+													<a class="blog-item-title-link" href="http://somebooks.es/otras-opciones-del-disco-de-instalacion-en-ubuntu-18-04-lts/" title="Otras opciones del disco de instalación en Ubuntu 18.04 LTS" rel="bookmark">
+														Otras opciones del disco de instalación en Ubuntu 18.04 LTS													</a>
+												</h4>
+												<p class="card-description">Además del proceso de instalación que hemos detallado en otros artículos de SomeBooks.es, el Live CD de Ubuntu 18.04 LTS nos ofrece otras opciones que pueden resultar de ayuda en algunas situaciones. Dichas opciones están<a class="moretag" href="..\index.html"> Leer más&hellip;</a></p>
+											</div>
+										</div>
+									</div>
+																	<div class="col-md-4">
+										<div class="card card-blog">
+																						<div class="content">
+												<h6 class="category text-info"><a href="http://somebooks.es/category/sistemas-operativos-en-red-2a-ed/" title="Ver todos las entradas en Sistemas Operativos en Red (2ª ed.)">Sistemas Operativos en Red (2ª ed.)</a> </h6>
+												<h4 class="card-title">
+													<a class="blog-item-title-link" href="http://somebooks.es/crear-perfil-obligatorio-windows-server-2016-utilizando-ubuntu/" title="Crear un perfil obligatorio en Windows Server 2016 utilizando Ubuntu" rel="bookmark">
+														Crear un perfil obligatorio en Windows Server 2016 utilizando Ubuntu													</a>
+												</h4>
+												<p class="card-description">En SomeBooks.es ya hemos dedicado algunos artículos a la creación de perfiles móviles de usuario. Como recordarás, cuando un usuario dispone de un perfil móvil, podrá iniciar sesión desde diferentes ordenadores cliente, manteniendo el mismo<a class="moretag" href="..\index.html"> Leer más&hellip;</a></p>
+											</div>
+										</div>
+									</div>
+																							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-wrapper">
+						<footer class="footer footer-black footer-big">
+						<div class="container">
+												
+				<div class="hestia-bottom-footer-content">
+					<div class="hestia-bottom-footer-content">					<div class="copyright pull-right">
+				<a href="https://themeisle.com/themes/hestia/" target="_blank" rel="nofollow">Hestia</a> | Funciona gracias a <a href="http://es.wordpress.org" rel="nofollow">WordPress</a>			</div>
+			</div>				</div>
+			</div>
+					</footer>
+				</div>
+	</div>
+	<div style="display:none">
+	</div>
+		<button class="hestia-scroll-to-top">
+			<i class="fa fa-angle-double-up" aria-hidden="true"></i>
+		</button>
+		
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"http:\/\/somebooks.es\/capitulo-12-integracion-de-redes-mixtas-con-windows-y-linux\/":5750};
+	</script>
+<link rel='stylesheet' id='genericons-css' href='http://somebooks.es/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css?ver=3.1' type='text/css' media='all'>
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201905'></script>
+<script type='text/javascript' src='https://secure.gravatar.com/js/gprofiles.js?ver=2019Janaa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://somebooks.es/wp-content/plugins/jetpack/modules/wpgroho.js?ver=4.9.9'></script>
+<script type='text/javascript' src='http://somebooks.es/wp-includes/js/comment-reply.min.js?ver=4.9.9'></script>
+<script type='text/javascript' src='http://somebooks.es/wp-content/themes/hestia/assets/bootstrap/js/bootstrap.min.js?ver=1.0.1'></script>
+<script type='text/javascript' src='http://somebooks.es/wp-content/themes/hestia/assets/js/material.js?ver=1.0.1'></script>
+<script type='text/javascript' src='http://somebooks.es/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var requestpost = {"ajaxurl":"http:\/\/somebooks.es\/wp-admin\/admin-ajax.php","disable_autoslide":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://somebooks.es/wp-content/themes/hestia/assets/js/scripts.js?ver=1.1.83'></script>
+<script type='text/javascript' src='http://somebooks.es/wp-includes/js/wp-embed.min.js?ver=4.9.9'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://somebooks.es/wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=6.3.3'></script>
+<script type='text/javascript'>
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-google-plus-1', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+				return false;
+			});
+</script>
+<script type='text/javascript' src='https://stats.wp.com/e-201905.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:6.3.3',blog:'118538658',post:'5750',tz:'0',srv:'somebooks.es'} ]);
+	_stq.push([ 'clickTrackerInit', '118538658', '5750' ]);
+</script>
+</body>
+</html>
