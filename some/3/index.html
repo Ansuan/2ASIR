@@ -1,0 +1,1158 @@
+﻿<!DOCTYPE html>
+<html lang="es-ES" prefix="og: http://ogp.me/ns#">
+
+<head>
+	<meta charset='UTF-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<title>Capítulo 12: Integración de redes mixtas con Windows y Linux - Página 3 de 9 - SomeBooks.es</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.9 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="index.html">
+<link rel="prev" href="..\2\index.html">
+<link rel="next" href="..\4\index.html">
+<meta property="og:locale" content="es_ES">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Capítulo 12: Integración de redes mixtas con Windows y Linux - Página 3 de 9 - SomeBooks.es">
+<meta property="og:description" content="12.3. Crear un grupo de trabajo en Windows 8.1 Un grupo de trabajo es la forma más simple que ofrecen los sistemas operativos de Microsoft para compartir archivos. No obstante, debido a sus escasas características Leer más&hellip;">
+<meta property="og:url" content="http://somebooks.es/capitulo-12-integracion-de-redes-mixtas-con-windows-y-linux/3/">
+<meta property="og:site_name" content="SomeBooks.es">
+<meta property="article:publisher" content="https://www.facebook.com/pages/Somebookses/474938955936480">
+<meta property="article:tag" content="14.04">
+<meta property="article:tag" content="Active directory">
+<meta property="article:tag" content="AD DC">
+<meta property="article:tag" content="compartir">
+<meta property="article:tag" content="configuración">
+<meta property="article:tag" content="Domain Controler">
+<meta property="article:tag" content="free">
+<meta property="article:tag" content="gratis">
+<meta property="article:tag" content="Libro">
+<meta property="article:tag" content="LTS">
+<meta property="article:tag" content="manual">
+<meta property="article:tag" content="problemas">
+<meta property="article:tag" content="Samba">
+<meta property="article:tag" content="Server">
+<meta property="article:tag" content="servicios">
+<meta property="article:tag" content="tutorial">
+<meta property="article:tag" content="ubuntu">
+<meta property="article:section" content="Sistemas Operativos en Red (2ª ed.)">
+<meta property="article:published_time" content="2015-02-11T19:04:06+00:00">
+<meta property="article:modified_time" content="2017-03-05T20:20:04+00:00">
+<meta property="og:updated_time" content="2017-03-05T20:20:04+00:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="12.3. Crear un grupo de trabajo en Windows 8.1 Un grupo de trabajo es la forma más simple que ofrecen los sistemas operativos de Microsoft para compartir archivos. No obstante, debido a sus escasas características Leer más&hellip;">
+<meta name="twitter:title" content="Capítulo 12: Integración de redes mixtas con Windows y Linux - Página 3 de 9 - SomeBooks.es">
+<meta name="twitter:site" content="@SomeBooks_es">
+<meta name="twitter:image" content="http://somebooks.es/wp-content/uploads/2014/08/volver.png">
+<meta name="twitter:creator" content="@SomeBooks_es">
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//s0.wp.com'>
+<link rel='dns-prefetch' href='//secure.gravatar.com'>
+<link rel='dns-prefetch' href='//maxcdn.bootstrapcdn.com'>
+<link rel='dns-prefetch' href='//fonts.googleapis.com'>
+<link rel='dns-prefetch' href='//s.w.org'>
+<link rel="alternate" type="application/rss+xml" title="SomeBooks.es &raquo; Feed" href="http://somebooks.es/feed/">
+<link rel="alternate" type="application/rss+xml" title="SomeBooks.es &raquo; RSS de los comentarios" href="http://somebooks.es/comments/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/somebooks.es\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.9"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='hestia-clients-bar-css' href='http://somebooks.es/wp-content/plugins/themeisle-companion/obfx_modules/companion-legacy/assets/css/hestia/clients-bar.css?ver=4.9.9' type='text/css' media='all'>
+<link rel='stylesheet' id='dashicons-css' href='http://somebooks.es/wp-includes/css/dashicons.min.css?ver=4.9.9' type='text/css' media='all'>
+<link rel='stylesheet' id='obfx-module-pub-css-menu-icons-0-css' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?ver=2.5.4' type='text/css' media='all'>
+<link rel='stylesheet' id='obfx-module-pub-css-menu-icons-1-css' href='http://somebooks.es/wp-content/plugins/themeisle-companion/obfx_modules/menu-icons/css/public.css?ver=2.5.4' type='text/css' media='all'>
+<link rel='stylesheet' id='wpstatistics-css-css' href='http://somebooks.es/wp-content/plugins/wp-statistics/assets/css/frontend.css?ver=12.3.6.4' type='text/css' media='all'>
+<link rel='stylesheet' id='bootstrap-css' href='http://somebooks.es/wp-content/themes/hestia/assets/bootstrap/css/bootstrap.min.css?ver=1.0.1' type='text/css' media='all'>
+<link rel='stylesheet' id='hestia-font-sizes-css' href='http://somebooks.es/wp-content/themes/hestia/assets/css/font-sizes.css?ver=1.1.83' type='text/css' media='all'>
+<link rel='stylesheet' id='font-awesome-css' href='http://somebooks.es/wp-content/themes/hestia/assets/font-awesome/css/font-awesome.min.css?ver=1.0.1' type='text/css' media='all'>
+<link rel='stylesheet' id='hestia_style-css' href='http://somebooks.es/wp-content/themes/hestia/style.css?ver=1.1.83' type='text/css' media='all'>
+<style id='hestia_style-inline-css' type='text/css'>
+.hestia-top-bar, .hestia-top-bar .widget.widget_shopping_cart .cart_list {
+			background-color: #363537
+		}
+		.hestia-top-bar .widget .label-floating input[type=search]:-webkit-autofill {
+			-webkit-box-shadow: inset 0 0 0px 9999px #363537
+		}.hestia-top-bar, .hestia-top-bar .widget .label-floating input[type=search], .hestia-top-bar .widget.widget_search form.form-group:before, .hestia-top-bar .widget.widget_product_search form.form-group:before, .hestia-top-bar .widget.widget_shopping_cart:before {
+			color: #ffffff
+		} 
+		.hestia-top-bar .widget .label-floating input[type=search]{
+			-webkit-text-fill-color:#ffffff !important 
+		}.hestia-top-bar a, .hestia-top-bar .top-bar-nav li a {
+			color: #ffffff
+		}.hestia-top-bar a:hover, .hestia-top-bar .top-bar-nav li a:hover {
+			color: #eeeeee
+		}
+	
+		a, 
+		.navbar .dropdown-menu li:hover > a,
+		.navbar .dropdown-menu li:focus > a,
+		.navbar .dropdown-menu li:active > a,
+		.navbar.navbar-not-transparent .nav > li:not(.btn).on-section > a, 
+		.navbar.navbar-not-transparent .nav > li.on-section:not(.btn) > a, 
+		.navbar.navbar-not-transparent .nav > li.on-section:not(.btn):hover > a, 
+		.navbar.navbar-not-transparent .nav > li.on-section:not(.btn):focus > a, 
+		.navbar.navbar-not-transparent .nav > li.on-section:not(.btn):active > a, 
+		body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a,
+		body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a:hover,
+		body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a:focus,
+		a:hover, 
+		.card-blog a.moretag:hover, 
+		.card-blog a.more-link:hover, 
+		.widget a:hover {
+		    color:#0c79ff;
+		}
+		
+		.pagination span.current, .pagination span.current:focus, .pagination span.current:hover {
+			border-color:#0c79ff
+		}
+		
+		button,
+		button:hover,           
+		input[type="button"],
+		input[type="button"]:hover,
+		input[type="submit"],
+		input[type="submit"]:hover,
+		input#searchsubmit, 
+		.pagination span.current, 
+		.pagination span.current:focus, 
+		.pagination span.current:hover,
+		.btn.btn-primary,
+		.btn.btn-primary:link,
+		.btn.btn-primary:hover, 
+		.btn.btn-primary:focus, 
+		.btn.btn-primary:active, 
+		.btn.btn-primary.active, 
+		.btn.btn-primary.active:focus, 
+		.btn.btn-primary.active:hover,
+		.btn.btn-primary:active:hover, 
+		.btn.btn-primary:active:focus, 
+		.btn.btn-primary:active:hover,
+		.hestia-sidebar-open.btn.btn-rose,
+		.hestia-sidebar-close.btn.btn-rose,
+		.hestia-sidebar-open.btn.btn-rose:hover,
+		.hestia-sidebar-close.btn.btn-rose:hover,
+		.hestia-sidebar-open.btn.btn-rose:focus,
+		.hestia-sidebar-close.btn.btn-rose:focus,
+		.label.label-primary,
+		.hestia-work .portfolio-item:nth-child(6n+1) .label,
+		.nav-cart .nav-cart-content .widget .buttons .button{
+		    background-color: #0c79ff;
+		}
+		
+		@media (max-width: 768px) { 
+	
+			.navbar-default .navbar-nav>li>a:hover,
+			.navbar-default .navbar-nav>li>a:focus,
+			.navbar .navbar-nav .dropdown .dropdown-menu li a:hover,
+			.navbar .navbar-nav .dropdown .dropdown-menu li a:focus,
+			.navbar button.navbar-toggle:hover,
+			.navbar .navbar-nav li:hover > a i {
+			    color: #0c79ff;
+			}
+		}
+		
+		button,
+		.button,
+		input[type="submit"], 
+		input[type="button"], 
+		.btn.btn-primary,
+		.hestia-sidebar-open.btn.btn-rose,
+		.hestia-sidebar-close.btn.btn-rose {
+		    -webkit-box-shadow: 0 2px 2px 0 rgba(12,121,255,0.14),0 3px 1px -2px rgba(12,121,255,0.2),0 1px 5px 0 rgba(12,121,255,0.12);
+		    box-shadow: 0 2px 2px 0 rgba(12,121,255,0.14),0 3px 1px -2px rgba(12,121,255,0.2),0 1px 5px 0 rgba(12,121,255,0.12);
+		}
+		
+		.card .header-primary, .card .content-primary {
+		    background: #0c79ff;
+		}
+		
+		.button:hover,
+		button:hover,
+		input[type="submit"]:hover,
+		input[type="button"]:hover,
+		input#searchsubmit:hover, 
+		.pagination span.current, 
+		.btn.btn-primary:hover, 
+		.btn.btn-primary:focus, 
+		.btn.btn-primary:active, 
+		.btn.btn-primary.active, 
+		.btn.btn-primary:active:focus, 
+		.btn.btn-primary:active:hover, 
+		.hestia-sidebar-open.btn.btn-rose:hover,
+		.hestia-sidebar-close.btn.btn-rose:hover,
+		.pagination span.current:hover{
+			-webkit-box-shadow: 0 14px 26px -12pxrgba(12,121,255,0.42),0 4px 23px 0 rgba(0,0,0,0.12),0 8px 10px -5px rgba(12,121,255,0.2);
+		    box-shadow: 0 14px 26px -12px rgba(12,121,255,0.42),0 4px 23px 0 rgba(0,0,0,0.12),0 8px 10px -5px rgba(12,121,255,0.2);
+			color: #fff;
+		}
+		
+		.form-group.is-focused .form-control {
+		background-image: -webkit-gradient(linear,left top, left bottom,from(#0c79ff),to(#0c79ff)),-webkit-gradient(linear,left top, left bottom,from(#d2d2d2),to(#d2d2d2));
+			background-image: -webkit-linear-gradient(#0c79ff),to(#0c79ff),-webkit-linear-gradient(#d2d2d2,#d2d2d2);
+			background-image: linear-gradient(#0c79ff),to(#0c79ff),linear-gradient(#d2d2d2,#d2d2d2);
+		}
+		
+		.navbar:not(.navbar-transparent) li:not(.btn):hover > a,
+		 .navbar.full-screen-menu.navbar-transparent li:not(.btn):hover > a,
+		 .navbar.full-screen-menu .navbar-toggle:hover,
+		 .navbar:not(.navbar-transparent) .nav-cart:hover, 
+		 .navbar:not(.navbar-transparent) .hestia-toggle-search:hover {
+				 color:#0c79ff}
+		
+		.header-filter-gradient { 
+			background: linear-gradient(45deg, rgba(30,115,190,1) 0%, rgb(96,143,169) 100%); 
+		} 
+h1, h2, h3, h4, h5, h6, .hestia-title, .hestia-title.title-in-content, p.meta-in-content , .info-title, .card-title,
+		.page-header.header-small .hestia-title, .page-header.header-small .title, .widget h5, .hestia-title, 
+		.title, .card-title, .info-title, .footer-brand, .footer-big h4, .footer-big h5, .media .media-heading, 
+		.carousel h1.hestia-title, .carousel h2.title, 
+		.carousel span.sub-title, .woocommerce.single-product h1.product_title, .woocommerce section.related.products h2, .hestia-about h1, .hestia-about h2, .hestia-about h3, .hestia-about h4, .hestia-about h5 {
+			font-family: Arial, Helvetica, sans-serif;
+		}
+@media (min-width: 769px){
+			.page-header.header-small .hestia-title,
+			.page-header.header-small .title,
+			h1.hestia-title.title-in-content{
+				font-size: 33px;
+			}}@media (max-width: 768px){
+			.page-header.header-small .hestia-title,
+			.page-header.header-small .title,
+			h1.hestia-title.title-in-content{
+				font-size: 36px;
+			}}@media (max-width: 480px){
+			.page-header.header-small .hestia-title,
+			.page-header.header-small .title,
+			h1.hestia-title.title-in-content{
+				font-size: 36px;
+			}}@media (min-width: 769px){
+		.single-post-wrap article h1:not(.title-in-content),
+		.page-content-wrap h1:not(.title-in-content),
+		.page-template-template-fullwidth article h1:not(.title-in-content) {
+			font-size: 36px;
+		}
+		.single-post-wrap article h2,
+		.page-content-wrap h2,
+		.page-template-template-fullwidth article h2 {
+			font-size: 31px;
+		}
+		.single-post-wrap article h3,
+		.page-content-wrap h3,
+		.page-template-template-fullwidth article h3 {
+			font-size: 26px;
+		}
+		.single-post-wrap article h4,
+		.page-content-wrap h4,
+		.page-template-template-fullwidth article h4 {
+			font-size: 21px;
+		}
+		.single-post-wrap article h5,
+		.page-content-wrap h5,
+		.page-template-template-fullwidth article h5 {
+			font-size: 17px;
+		}
+		.single-post-wrap article h6,
+		.page-content-wrap h6,
+		.page-template-template-fullwidth article h6 {
+			font-size: 12px;
+		}}
+
+		.page-template-builder-fullwidth-std .header > .elementor {
+			padding-top: 70px;
+		}
+
+</style>
+<link rel='stylesheet' id='hestia_fonts-css' href='https://fonts.googleapis.com/css?family=Roboto%3A300%2C400%2C500%2C700%7CRoboto+Slab%3A400%2C700&#038;subset=latin%2Clatin-ext&#038;ver=1.1.83' type='text/css' media='all'>
+<link rel='stylesheet' id='jetpack-widget-social-icons-styles-css' href='http://somebooks.es/wp-content/plugins/jetpack/modules/widgets/social-icons/social-icons.css?ver=20170506' type='text/css' media='all'>
+<link rel='stylesheet' id='social-logos-css' href='http://somebooks.es/wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=1' type='text/css' media='all'>
+<link rel='stylesheet' id='jetpack_css-css' href='http://somebooks.es/wp-content/plugins/jetpack/css/jetpack.css?ver=6.3.3' type='text/css' media='all'>
+<script type='text/javascript' src='http://somebooks.es/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://somebooks.es/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://somebooks.es/wp-content/plugins/jetpack/_inc/build/related-posts/related-posts.min.js?ver=20150408'></script>
+<link rel='https://api.w.org/' href='http://somebooks.es/wp-json/'>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://somebooks.es/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://somebooks.es/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.9.9">
+<link rel='shortlink' href='https://wp.me/p81njQ-1uK'>
+<link rel="alternate" type="application/json+oembed" href="http://somebooks.es/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fsomebooks.es%2Fcapitulo-12-integracion-de-redes-mixtas-con-windows-y-linux%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://somebooks.es/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fsomebooks.es%2Fcapitulo-12-integracion-de-redes-mixtas-con-windows-y-linux%2F&#038;format=xml">
+
+<link rel='dns-prefetch' href='//v0.wordpress.com'>
+<style type='text/css'>img#wpstats{display:none}</style><style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #1e73be; }
+</style>
+<link rel="icon" href="http://somebooks.es/wp-content/uploads/2016/10/marca-de-agua-vídeo-2-150x150.png" sizes="32x32">
+<link rel="icon" href="http://somebooks.es/wp-content/uploads/2016/10/marca-de-agua-vídeo-2.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="http://somebooks.es/wp-content/uploads/2016/10/marca-de-agua-vídeo-2.png">
+<meta name="msapplication-TileImage" content="http://somebooks.es/wp-content/uploads/2016/10/marca-de-agua-vídeo-2.png">
+			<link rel="stylesheet" type="text/css" id="wp-custom-css" href="http://somebooks.es/?custom-css=a79ce01f7c">
+		</head>
+
+<body class="post-template-default single single-post postid-5750 single-format-standard custom-background wp-custom-logo paged-3 single-paged-3 blog-post">
+	<div class="wrapper post-5750 post type-post status-publish format-standard hentry category-sistemas-operativos-en-red-2a-ed tag-14-04 tag-active-directory tag-ad-dc tag-compartir tag-configuracion tag-domain-controler tag-free tag-gratis tag-libro tag-lts tag-manual tag-problemas tag-samba tag-server tag-servicios tag-tutorial tag-ubuntu">
+		<header class="header ">
+					<nav class="navbar navbar-default navbar-fixed-top  hestia_left navbar-not-transparent">
+						<div class="container">
+				<div class="navbar-header">
+					<div class="title-logo-wrapper">
+						<a class="navbar-brand" href="http://somebooks.es/" title="SomeBooks.es">
+							<img src="http://somebooks.es/wp-content/uploads/2016/10/cropped-logo_somebooks.png" alt="SomeBooks.es"></a>
+					</div>
+				</div>
+				<div id="main-navigation" class="collapse navbar-collapse"><ul id="menu-menu" class="nav navbar-nav navbar-right"><li id="menu-item-1368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1368"><a title="Home" href="http://somebooks.es">Home</a></li>
+<li id="menu-item-10263" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-10263 dropdown"><a title="Nuestros libros" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Nuestros libros <span class="caret"></span></a>
+<ul role="menu" class="dropdown-menu">
+	<li id="menu-item-10100" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10100"><a title="Colección de fichas: Infantil de 3 años" href="http://somebooks.es/coleccion-de-fichas-infantil-de-3-anos/"><img style="float: left; max-height:3em;padding-right:1em;" src="http://somebooks.es/wp-content/uploads/2018/05/infantil_3.png" alt=""> Colección de fichas: <br>Infantil de 3 años</a></li>
+	<li id="menu-item-10101" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10101"><a title="Colección de fichas: Infantil de 4 años" href="http://somebooks.es/coleccion-de-fichas-infantil-de-4-anos/"><img style="float: left; max-height:3em;padding-right:1em;" src="http://somebooks.es/wp-content/uploads/2018/05/infantil-4-b.png"> Colección de fichas: <br>Infantil de 4 años</a></li>
+	<li id="menu-item-10102" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10102"><a title="Aprende a programar en Android:       Nivel básico" href="http://somebooks.es/aprende-a-programar-en-android-nivel-basico/"><img style="float: left; max-height:3em;padding-right:1em;" src="http://somebooks.es/wp-content/uploads/2018/05/android.png"> Aprende a programar en Android:       <br>Nivel básico</a></li>
+	<li id="menu-item-10103" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10103"><a title="Sistemas Operativos en Red" href="http://somebooks.es/sistemas-operativos-en-red/"><img style="float: left; max-height:3em;padding-right:1em;" src="http://somebooks.es/wp-content/uploads/2018/05/sor.png"> Sistemas Operativos <br>en Red</a></li>
+	<li id="menu-item-10104" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10104"><a title="Sistemas Operativos en Red (2ª edición)" href="http://somebooks.es/sistemas-operativos-red-2a-edicion/"><img style="float: left; max-height:3em;padding-right:1em;" src="http://somebooks.es/wp-content/uploads/2018/05/sor-v2.png"> Sistemas Operativos <br>en Red (2ª edición)</a></li>
+	<li id="menu-item-10105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10105"><a title="Conceptos básicos sobresistemas operativos" href="http://somebooks.es/conceptos-basicos-sobre-sistemas-operativos/"><img style="float: left; max-height:3em;padding-right:1em;" src="http://somebooks.es/wp-content/uploads/2018/05/cbso.png"> Conceptos básicos sobre<br>sistemas operativos</a></li>
+	<li id="menu-item-10106" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10106"><a title="Tips &amp; Tricks (Edición para Linux)" href="http://somebooks.es/tips-tricks-edicion-para-linux/"><img style="float: left; max-height:3em;padding-right:1em;" src="http://somebooks.es/wp-content/uploads/2018/05/ttl.png"> Tips &#038; Tricks <br>(Edición para Linux)</a></li>
+	<li id="menu-item-10107" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10107"><a title="Tips &amp; Tricks (Edición para Windows)" href="http://somebooks.es/tips-tricks-edicion-para-windows/"><img style="float: left; max-height:3em;padding-right:1em;" src="http://somebooks.es/wp-content/uploads/2018/05/ttw.png"> Tips &#038; Tricks <br>(Edición para Windows)</a></li>
+	<li id="menu-item-10108" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10108"><a title="Introducción a las redes de ordenadores" href="http://somebooks.es/introduccion-las-redes-ordenadores/"><img style="float: left; max-height:3em;padding-right:1em;" src="http://somebooks.es/wp-content/uploads/2018/05/ialrdo.png"> Introducción a las <br>redes de ordenadores</a></li>
+	<li id="menu-item-10109" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10109"><a title="Introducción a la virtualización" href="http://somebooks.es/introduccion-la-virtualizacion/"><img style="float: left; max-height:3em;padding-right:1em;" src="http://somebooks.es/wp-content/uploads/2018/05/ialv.png"> Introducción a la virtualización</a></li>
+	<li id="menu-item-10110" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10110"><a title="Scripts en PowerShell: Guia para principiantes" href="http://somebooks.es/scripts-powershell-guia-principiantes/"><img style="float: left; max-height:3em;padding-right:1em;" src="http://somebooks.es/wp-content/uploads/2018/05/spspp.png"> Scripts en PowerShell: <br>Guia para principiantes</a></li>
+</ul>
+</li>
+<li id="menu-item-9845" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-9845"><a title="Acerca de SomeBooks.es" href="http://somebooks.es/hello-world-2/">Acerca de SomeBooks.es</a></li>
+</ul></div>					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="sr-only">Cambiar modo de navegación</span>
+					</button>
+								</div>
+
+					</nav>
+		<div style="display: none"></div>		</header>
+<div id="primary" class="boxed-layout-header page-header header-small" data-parallax="active"><div class="header-filter" style="background-image: url(http://somebooks.es/wp-content/uploads/2018/07/fondo4-1.png);"></div></div>
+<div class="main  main-raised no-content">
+	<div class="blog-post blog-post-wrapper">
+		<div class="container">
+			<div class="row">
+		<div class=" single-post-wrap col-md-8">
+		
+			<article id="post-5750" class="section section-text">
+				<h1 class="hestia-title title-in-content entry-title">Capítulo 12: Integración de redes mixtas con Windows y Linux</h1><p class="author meta-in-content">Publicado por <a href="http://somebooks.es/author/editor/" class="vcard author"><strong class="fn">P. Ruiz</strong></a> en <time class="date updated published" datetime="2015-02-11T19:04:06+00:00">11 febrero, 2015</time></p>
+<p style="text-align: right;"><a href="http://somebooks.es/?p=4787#conte">
+<img alt="" src="http://somebooks.es/wp-content/uploads/2014/08/volver.png">
+</a></p><div class="hLIhvTOU" style="clear:both;float:left;width:100%;margin:0 0 20px 0;"><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-5265889913168195" data-ad-slot="3006682462"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+
+<h2>12.3. Crear un grupo de trabajo en Windows 8.1</h2>
+Un grupo de trabajo es la forma más simple que ofrecen los sistemas operativos de <em>Microsoft</em> para compartir archivos. No obstante, debido a sus escasas características de seguridad, sólo se recomienda su uso en entornos confiables. Al fin y al cabo, no debemos olvidar que &#8230;
+<ul>
+	<li>En un grupo de trabajo, todos los ordenadores que participan tienen el mismo nivel (no existe un ordenador que tenga ningún tipo de control sobre los demás).</li>
+	<li>Las cuentas de usuario son locales, lo que significa que para trabajar en un determinado equipo del grupo de trabajo, antes debemos tener una cuenta de usuario en el mismo.</li>
+	<li>Los grupos de trabajo están pensados para redes en las que participan pocos ordenadores (Microsoft recomienda que no sean más de 20)</li>
+	<li>Todos los equipos participantes deben pertenecer a la misma red.</li>
+	<li>Los grupos de trabajo no están protegidos por contraseña.</li>
+</ul>
+Cuando configuramos la red en <em>Windows 8.1</em>, se crea automáticamente un grupo de trabajo con el nombre <em>WORKGROUP</em>. Sin embargo, veremos que es muy sencillo elegir un nombre diferente para el grupo de trabajo, o configurar <em>Windows 8.1</em> para que se una a un grupo de trabajo que ya exista en la red.
+
+Otro aspecto a tener en cuenta es que los grupos de trabajo sólo proporcionan la infraestructura básica para compartir archivos e impresoras, pero no configuran el uso compartido de forma automática.
+
+Así pues, para crear un nuevo grupo de trabajo con Windows 8.1, seguiremos los siguientes pasos:
+<ul>
+	<li> Estableceremos el nombre del grupo de trabajo, lo que equivaldrá a crearlo, si aún no existe.</li>
+	<li>Cambiaremos las opciones predeterminadas de uso compartido</li>
+	<li>Compartiremos una carpeta con los demás miembros del grupo de trabajo.</li>
+	<li>Finalmente, comprobaremos que los archivos contenidos en la carpeta anterior está accesible desde otro equipo del grupo.</li>
+</ul>
+Pues bien, una vez establecidos los objetivos, comencemos&#8230;
+<h3>Establecer el nombre del grupo de trabajo</h3>
+Una de las formas más sencillas de establecer un nombre para el grupo de trabajo consiste en acceder a las propiedades del <em>Equipo</em> desde el menú <em>Metro</em>.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">1</p>
+
+</div>
+<div id="figura-texto">
+
+Para lograrlo, comenzamos por hacer clic sobre el botón <em>Inicio</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-002.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-002.png" width="100%"> </a></div>
+</div>
+</div>
+Una vez desplegado el menú metro, hacemos clic con el botón derecho del ratón sobre el icono que representa al <em>Equipo</em>.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">2</p>
+
+</div>
+<div id="figura-texto">
+
+&#8230; Y en el menú de contexto que aparece, elegimos <em>Propiedades</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-003.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-003.png" width="100%"> </a></div>
+</div>
+</div>
+Al hacerlo, aparecerá una ventana con información del sistema. En la parte inferior, además de algunos detalles sobre el hardware del equipo, podemos encontrar su nombre (tanto el nombre <em>NetBIOS</em> como el nombre <em>DNS</em>), la descripción y el nombre del grupo de trabajo o dominio al que pertenece.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">3</p>
+
+</div>
+<div id="figura-texto">
+
+Para cambiar estos datos, sólo tenemos que hacer clic en el enlace <em>Cambiar configuración</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-004.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-004.png" width="100%"> </a></div>
+</div>
+</div>
+En la ventana <em>Propiedades del sistema</em>, que aparece a continuación, podríamos escribir un texto para la descripción (si te fijas, en la imagen anterior aparecía en blanco). Sin embargo, lo dejaremos así.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">4</p>
+
+</div>
+<div id="figura-texto">
+
+Lo que sí haremos será un clic sobre el botón <em>Cambiar</em>, para escribir el nuevo nombre del grupo de trabajo y, si lo consideramos oportuno, un nuevo nombre de equipo.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-005.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-005.png" width="100%"> </a></div>
+</div>
+</div>
+Lo haremos en la ventana que aparece a continuación.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">5</p>
+
+</div>
+<div id="figura-texto">
+
+Cuando los datos sean correctos, hacemos clic en <em>Aceptar</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-006.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-006.png" width="100%"> </a></div>
+</div>
+</div>
+En ese momento, <em>Windows 8.1</em> busca en la red algún equipo (o equipos) que tengan el mismo nombre de grupo de trabajo. Si los encuentra, considerará que es miembro del grupo. Si no, considerará que se trata de un grupo nuevo. Además, si en el momento de unirse al grupo de trabajo, el equipo hubiese sido miembro de un dominio, se daría de baja del dominio de forma automática y se deshabilitaría su cuenta del equipo en dicho dominio.
+
+En cualquier caso, aparecerá un mensaje indicando que se ha unido satisfactoriamente al grupo de trabajo.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">6</p>
+
+</div>
+<div id="figura-texto">
+
+Sólo tendremos que hacer clic sobre el botón <em>Aceptar</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-007.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-007.png" width="100%"> </a></div>
+</div>
+</div>
+A continuación, aparece una nueva ventana informativa indicando que deberemos reiniciar el equipo para que se apliquen los cambios, pero que antes deberemos cerrar todos los programas y guardar todos los archivos que tengamos abiertos.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">7</p>
+
+</div>
+<div id="figura-texto">
+
+De nuevo, hacemos clic sobre <em>Aceptar</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-008.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-008.png" width="100%"> </a></div>
+</div>
+</div>
+Cuando cerremos la ventana de <em>Propiedades del sistema</em>, detectará que ya no hay programas en ejecución y nos dará la oportunidad de reiniciar en ese momento.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">8</p>
+
+</div>
+<div id="figura-texto">
+
+Hacemos clic sobre <em>Reiniciar ahora</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-009.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-009.png" width="100%"> </a></div>
+</div>
+</div>
+<h3>Cambiar las opciones de uso compartido</h3>
+Como hemos dicho al principio del apartado, con las modificaciones anteriores no se ha configurado de forma automática el uso compartido de recursos, por lo que el siguiente paso consistirá en hacerlo nosotros.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">1</p>
+
+</div>
+<div id="figura-texto">
+
+Comenzaremos por hacer clic sobre el icono del <em>Explorador de archivos</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-010.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-010.png" width="100%"> </a></div>
+</div>
+</div>
+Una vez abierta la ventana, en el panel izquierdo, hacemos clic sobre el elemento <em>Red</em>, con el botón derecho del ratón.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">2</p>
+
+</div>
+<div id="figura-texto">
+
+Y, en el menú de contexto que aparece, elegimos la opción <em>Propiedades</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-011.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-011.png" width="100%"> </a></div>
+</div>
+</div>
+Al hacerlo, se abrirá la ventana <em>Centro de redes y recursos compartidos</em>.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">3</p>
+
+</div>
+<div id="figura-texto">
+
+En ella, debemos hacer clic sobre el enlace <em>Cambiar configuración de uso compartido avanzado</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-012.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-012.png" width="100%"> </a></div>
+</div>
+</div>
+Cuando se abra la ventana <em>Configuración de uso compartido avanzado</em> observaremos que está dividida en tres categorías diferentes:
+<ul>
+	<li>Privado (perfil actual)</li>
+	<li>Invitado o público</li>
+	<li>Todas las redes</li>
+</ul>
+Aquí las mostramos contraídas para que se observen fácilmente, pero es común que te aparezca la primera categoría expandida.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">4</p>
+
+</div>
+<div id="figura-texto">
+
+Para desplegar cualquiera de ellas, haremos clic sobre el botón que aparece a su derecha.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-013.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-013.png" width="100%"> </a></div>
+</div>
+</div>
+Desplegando la categoría <em>Privado (perfil actual)</em>, deben aparecer las siguientes opciones:
+<ul>
+	<li><em>Activar la detección de redes</em> (y en su interior, <em>Activar la configuración automática de los dispositivos conectados a la red</em>).</li>
+	<li><em>Activar el uso compartido de archivos e impresoras</em>.</li>
+	<li><em>Permitir que Windows administre las conexiones del grupo en el hogar (recomendado)</em>.</li>
+</ul>
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">5</p>
+
+</div>
+<div id="figura-texto">
+
+Si alguna de ellas no apareciese seleccionada, deberíamos hacerlo.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-014.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-014.png" width="100%"> </a></div>
+</div>
+</div>
+Dentro de la categoría Invitado o público, debemos activar las siguientes opciones:
+<ul>
+	<li><em>Activar la detección de redes</em>.</li>
+	<li><em>Activar el uso compartido de archivos e impresoras</em>.</li>
+</ul>
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">6</p>
+
+</div>
+<div id="figura-texto">
+
+En este caso, las opciones elegidas no serán las que aparecían predeterminadas.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-015.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-015.png" width="100%"> </a></div>
+</div>
+</div>
+Por último, en la categoría Todas las redes, nos aseguramos de que aparecen marcadas las siguientes opciones:
+<ul>
+	<li><em>Activar el uso compartido para que todos los usuarios con acceso a la red puedan leer y escribir archivos de las carpetas públicas</em>.</li>
+	<li><em>Usar el cifrado de 128 bits para ayudar a proteger las conexiones de uso compartido de archivos (recomendado)</em>.</li>
+	<li><em>Desactivar el uso compartido con protección por contraseña</em>.</li>
+</ul>
+En este, probablemente la única opción que no tenga el valor correcto de forma predeterminada sea la última.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">7</p>
+
+</div>
+<div id="figura-texto">
+
+Cuando hayamos terminado, hacemos clic sobre el botón <em>Guardar cambios</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-016.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-016.png" width="100%"> </a></div>
+</div>
+</div>
+<h3>Compartir una carpeta</h3>
+Una vez que tenemos configuradas las opciones de uso compartido, estamos listos para compartir con el grupo de trabajo una carpeta cualquiera de nuestro equipo.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">1</p>
+
+</div>
+<div id="figura-texto">
+
+Lo primero será abrir el <em>Explorador de archivos</em> para localizar la carpeta deseada.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-017.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-017.png" width="100%"> </a></div>
+</div>
+</div>
+En nuestro caso, hemos decidido compartir la carpeta imágenes, así es que nos desplazamos hasta ella. Una vez ahí, hacemos clic con el botón derecho del ratón sobre cualquier espacio libre del área de trabajo de la ventana.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">2</p>
+
+</div>
+<div id="figura-texto">
+
+En el menú de contexto que aparece, elegimos la opción <em>Propiedades</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-018.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-018.png" width="100%"> </a></div>
+</div>
+</div>
+Esto hará que se abra la ventana <em>Propiedades: Imágenes</em> (lógicamente, el nombre depende de la carpeta que vayamos a compartir). En ella, hacemos clic sobre la solapa <em>Compartir</em>.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">3</p>
+
+</div>
+<div id="figura-texto">
+
+&#8230; Y, a continuación, sobre el botón <em>Uso compartido avanzado</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-019.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-019.png" width="100%"> </a></div>
+</div>
+</div>
+Cuando se muestre la ventana <em>Uso compartido avanzado</em>, hacemos clic sobre la casilla de verificación <em>Compartir esta carpeta</em>.
+
+Debajo, podremos indicar el nombre que tendrá en la red la carpeta que estamos compartiendo, establecer el número de usuarios que podrán acceder al mismo tiempo y, sobre todo, indicar los permisos que tendrán los usuarios sobre los archivos que tengamos guardados en la carpeta.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">4</p>
+
+</div>
+<div id="figura-texto">
+
+En nuestro ejemplo, sólo hacemos clic sobre el botón <em>Permisos</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-020.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-020.png" width="100%"> </a></div>
+</div>
+</div>
+En la ventana <em>Permisos de Pictures</em> elegiremos, en la parte superior los usuarios o grupos a los que asignaremos permisos y, en la parte inferior, las acciones que permitimos o denegamos.
+
+Si necesitáramos incluir algún usuario o grupo en particular, usaríamos el botón <em>Agregar</em>. Sin embargo, nosotros aquí nos limitaremos a asignar permisos de forma general para todos los usuarios.
+
+Para lograrlo, hacemos clic en la parte superior sobre <em>Todos</em> y, en la parte inferior establecemos qué cosas podrán hacer. En nuestro caso, además de <em>Leer</em>, que es el valor predeterminado, permitiremos también <em>Cambiar</em>. De esta forma, los usuarios que accedan a nuestros archivos, podrán hacer también modificaciones.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">5</p>
+
+</div>
+<div id="figura-texto">
+
+Una vez elegidos los permisos, hacemos clic sobre el botón <em>Aceptar</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-021.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-021.png" width="100%"> </a></div>
+</div>
+</div>
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">6</p>
+
+</div>
+<div id="figura-texto">
+
+De vuelta en la ventana <em>Uso compartido avanzado</em>, sólo nos queda hacer clic sobre el botón <em>Aceptar</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-022.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-022.png" width="100%"> </a></div>
+</div>
+</div>
+Una vez que hayamos regresado a la ventana <em>Propiedades: Imágenes</em>, iniciamos la segunda fase del procedimiento.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">7</p>
+
+</div>
+<div id="figura-texto">
+
+Hacemos clic sobre el botón <em>Compartir</em>&#8230;
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-023.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-023.png" width="100%"> </a></div>
+</div>
+</div>
+Esto nos llevará a la ventana <em>Archivos compartidos</em>. Aquí, de nuevo, deberemos indicar los usuarios con los que queremos compartir la carpeta.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">8</p>
+
+</div>
+<div id="figura-texto">
+
+En la lista desplegable, elegimos <em>Todos</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-024.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-024.png" width="100%"> </a></div>
+</div>
+</div>
+&nbsp;
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">9</p>
+
+</div>
+<div id="figura-texto">
+
+A continuación, hacemos clic sobre el botón <em>Agregar</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-025.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-025.png" width="100%"> </a></div>
+</div>
+</div>
+Una vez que aparezca <em>Todos</em> en la lista de nombres, desplegamos su lista de permisos&#8230;
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">10</p>
+
+</div>
+<div id="figura-texto">
+
+&#8230; Y elegimos Lectura y escritura
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-026.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-026.png" width="100%"> </a></div>
+</div>
+</div>
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">11</p>
+
+</div>
+<div id="figura-texto">
+
+Después, sólo queda hacer clic sobre el botón <em>Compartir</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-027.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-027.png" width="100%"> </a></div>
+</div>
+</div>
+Esto nos devolverá a la ventana <em>Archivos compartidos</em>, pero ahora comprobamos que aparece la carpeta que acabamos de compartir
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">12</p>
+
+</div>
+<div id="figura-texto">
+
+Ya sólo queda hacer clic sobre el botón <em>Listo</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-028.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-028.png" width="100%"> </a></div>
+</div>
+</div>
+Aunque el trabajo está terminado, para que el recurso compartido esté disponible para el resto de participantes en el grupo de trabajo, necesitaremos reiniciar el equipo
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">13</p>
+
+</div>
+<div id="figura-texto">
+
+Como siempre, en el panel <em>Configuración</em>, hacemos clic sobre el botón <em>Iniciar/Apagar</em> y elegimos la opción <em>Reiniciar</em>.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-029.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-029.png" width="100%"> </a></div>
+</div>
+</div>
+<h3>Comprobar que los archivos están disponibles en otro equipo</h3>
+Para comprobar que todo ha funcionado de forma adecuada, basta con irnos hasta otro equipo de la red local, que forme parte del mismo grupo de trabajo, abrir el <em>Explorador de archivos</em> y desplazarnos hasta el lugar donde debe encontrarse el recurso compartido.
+
+<!-- figura-numerada -->
+<div id="figura-contenedor">
+<div id="figura-contenido">
+<div id="figura-numero">
+<p id="numero">1</p>
+
+</div>
+<div id="figura-texto">
+
+Comprobamos que aparece el archivo que contenía originalmente la carpeta del equipo que la está compartiendo.
+
+</div>
+</div>
+<div id="figura-contenido">
+<div id="figura-imagen"><a href="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-030.png"> <img alt="" src="http://somebooks.es/wp-content/uploads/2015/02/cap12v2-030.png" width="100%"> </a></div>
+</div>
+</div>
+<div class="cuadro-nota-centro">Si necesitamos que un equipo de la red forme parte de un grupo de trabajo para usar los recursos compartidos por otros miembros, pero no es necesario que éste comparta ningún recurso propio, bastaría con seguir los dos primeros puntos de este apartado.</div>
+<p style="text-align: right;"><a href="http://somebooks.es/?p=4787#conte">
+<img alt="" src="http://somebooks.es/wp-content/uploads/2014/08/volver.png">
+</a></p><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><h3 class="sd-title">Compártelo:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-5750" class="share-twitter sd-button share-icon no-text" href="http://somebooks.es/capitulo-12-integracion-de-redes-mixtas-con-windows-y-linux/?share=twitter" rel="noopener noreferrer" target="_blank" title="Haz clic para compartir en Twitter"><span></span><span class="sharing-screen-reader-text">Haz clic para compartir en Twitter (Se abre en una ventana nueva)</span></a></li><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-5750" class="share-facebook sd-button share-icon no-text" href="http://somebooks.es/capitulo-12-integracion-de-redes-mixtas-con-windows-y-linux/?share=facebook" rel="noopener noreferrer" target="_blank" title="Haz clic para compartir en Facebook"><span></span><span class="sharing-screen-reader-text">Haz clic para compartir en Facebook (Se abre en una ventana nueva)</span></a></li><li class="share-google-plus-1"><a rel="nofollow" data-shared="sharing-google-5750" class="share-google-plus-1 sd-button share-icon no-text" href="http://somebooks.es/capitulo-12-integracion-de-redes-mixtas-con-windows-y-linux/?share=google-plus-1" rel="noopener noreferrer" target="_blank" title="Haz clic para compartir en Google+"><span></span><span class="sharing-screen-reader-text">Haz clic para compartir en Google+ (Se abre en una ventana nueva)</span></a></li><li class="share-end"></li></ul></div></div></div>
+<div id='jp-relatedposts' class='jp-relatedposts'>
+	<h3 class="jp-relatedposts-headline"><em>Relacionado</em></h3>
+</div><div class="text-center"> <ul class="nav pagination pagination-primary"> <li><a href="..\index.html">1</a></li> <li><a href="..\2\index.html">2</a></li> <li><span class="page-numbers current">3</span></li> <li><a href="..\4\index.html">4</a></li> <li><a href="..\5\index.html">5</a></li> <li><a href="..\6\index.html">6</a></li> <li><a href="..\7\index.html">7</a></li> <li><a href="..\8\index.html">8</a></li> <li><a href="..\9\index.html">9</a></li></ul> </div>			</article>
+			
+		<div class="section section-blog-info">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="entry-categories">Categorías:						<span class="label label-primary"><a href="http://somebooks.es/category/sistemas-operativos-en-red-2a-ed/">Sistemas Operativos en Red (2ª ed.)</a></span>					</div>
+					<div class="entry-tags">Etiquetas: <span class="entry-tag"><a href="http://somebooks.es/tag/14-04/" rel="tag">14.04</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/active-directory/" rel="tag">Active directory</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/ad-dc/" rel="tag">AD DC</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/compartir/" rel="tag">compartir</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/configuracion/" rel="tag">configuración</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/domain-controler/" rel="tag">Domain Controler</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/free/" rel="tag">free</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/gratis/" rel="tag">gratis</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/libro/" rel="tag">Libro</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/lts/" rel="tag">LTS</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/manual/" rel="tag">manual</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/problemas/" rel="tag">problemas</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/samba/" rel="tag">Samba</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/server/" rel="tag">Server</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/servicios/" rel="tag">servicios</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/tutorial/" rel="tag">tutorial</a></span><span class="entry-tag"><a href="http://somebooks.es/tag/ubuntu/" rel="tag">ubuntu</a></span></div>				</div>
+				
+        <div class="col-md-6">
+            <div class="entry-social">
+                <a target="_blank" rel="tooltip" data-original-title="Compartir en Facebook" class="btn btn-just-icon btn-round btn-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://somebooks.es/capitulo-12-integracion-de-redes-mixtas-con-windows-y-linux/">
+                   <i class="fa fa-facebook"></i>
+                </a>
+                
+                <a target="_blank" rel="tooltip" data-original-title="Compartir en Twitter" class="btn btn-just-icon btn-round btn-twitter" href="https://twitter.com/home?status=Capítulo%2012:%20Integración%20de%20redes%20mixtas%20con%20Windows%20y%20Linux%20-%20http://somebooks.es/capitulo-12-integracion-de-redes-mixtas-con-windows-y-linux/">
+                   <i class="fa fa-twitter"></i>
+                </a>
+                
+                <a target="_blank" rel="tooltip" data-original-title=" Compartir en Google+" class="btn btn-just-icon btn-round btn-google" href="https://plus.google.com/share?url=http://somebooks.es/capitulo-12-integracion-de-redes-mixtas-con-windows-y-linux/">
+                   <i class="fa fa-google"></i>
+               </a>
+            </div>
+		</div>			</div>
+			<hr>
+					</div>
+			</div>
+		<div class="col-md-3 blog-sidebar-wrapper col-md-offset-1 ">
+		<aside id="secondary" class="blog-sidebar" role="complementary">
+			<div id="search-5" class="widget widget_search"><form role="search" method="get" class="search-form" action="http://somebooks.es/">
+				<label>
+					<span class="screen-reader-text">Buscar:</span>
+					<input type="search" class="search-field" placeholder="Buscar &hellip;" value="" name="s">
+				</label>
+				<input type="submit" class="search-submit" value="Buscar">
+			</form></div><div id="wpcom_social_media_icons_widget-3" class="widget widget_wpcom_social_media_icons_widget"><ul><li><a href="https://www.facebook.com/Somebookses-474938955936480/" class="genericon genericon-facebook" target="_blank"><span class="screen-reader-text">Ver perfil de Somebookses-474938955936480 en Facebook</span></a></li><li><a href="https://twitter.com/SomeBooks_es/" class="genericon genericon-twitter" target="_blank"><span class="screen-reader-text">Ver perfil de SomeBooks_es en Twitter</span></a></li></ul></div><div id="custom_html-5" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><p style="text-align: center">
+
+<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Bloque01 -->
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5265889913168195" data-ad-slot="4335950463"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	</p></div></div>		</aside><!-- .sidebar .widget-area -->
+	</div>
+	</div>
+
+		</div>
+	</div>
+</div>
+
+			<div class="section related-posts">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h2 class="hestia-title text-center">Entradas relacionadas</h2>
+							<div class="row">
+																	<div class="col-md-4">
+										<div class="card card-blog">
+																							<div class="card-image">
+													<a href="http://somebooks.es/cambiar-el-tiempo-que-ubuntu-18-04-lts-recuerda-la-contrasena/" title="Cambiar el tiempo que Ubuntu 18.04 LTS recuerda la contraseña">
+														<img width="360" height="240" src="http://somebooks.es/wp-content/uploads/2018/07/Terminal-de-Ubuntu-b-360x240.png" class="attachment-hestia-blog size-hestia-blog wp-post-image" alt="" srcset="http://somebooks.es/wp-content/uploads/2018/07/Terminal-de-Ubuntu-b-360x240.png,http://somebooks.es/wp-content/uploads/2018/07/Terminal-de-Ubuntu-b-150x100.png,http://somebooks.es/wp-content/uploads/2018/07/Terminal-de-Ubuntu-b-300x200.png,http://somebooks.es/wp-content/uploads/2018/07/Terminal-de-Ubuntu-b.png" sizes="(max-width: 360px) 100vw, 360px" data-attachment-id="10443" data-permalink="http://somebooks.es/administrar-procesos-desde-la-linea-comandos-ubuntu-18-04-lts/terminal-de-ubuntu-b/" data-orig-file="http://somebooks.es/wp-content/uploads/2018/07/Terminal-de-Ubuntu-b.png" data-orig-size="750,501" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Terminal de Ubuntu-b" data-image-description="" data-medium-file="http://somebooks.es/wp-content/uploads/2018/07/Terminal-de-Ubuntu-b-300x200.png" data-large-file="http://somebooks.es/wp-content/uploads/2018/07/Terminal-de-Ubuntu-b.png">													</a>
+												</div>
+																						<div class="content">
+												<h6 class="category text-info"><a href="http://somebooks.es/category/sistemas-operativos-en-red-2a-ed/" title="Ver todos las entradas en Sistemas Operativos en Red (2ª ed.)">Sistemas Operativos en Red (2ª ed.)</a> </h6>
+												<h4 class="card-title">
+													<a class="blog-item-title-link" href="http://somebooks.es/cambiar-el-tiempo-que-ubuntu-18-04-lts-recuerda-la-contrasena/" title="Cambiar el tiempo que Ubuntu 18.04 LTS recuerda la contraseña" rel="bookmark">
+														Cambiar el tiempo que Ubuntu 18.04 LTS recuerda la contraseña													</a>
+												</h4>
+												<p class="card-description">Cuando utilizamos la orden&nbsp;sudo para ejecutar algún comando con privilegios administrativos, el sistema recuerda la contraseña durante los próximos 15 minutos (siempre que no cerremos la ventana de terminal donde la hemos escrito). Puedes abrir<a class="moretag" href="..\index.html"> Leer más&hellip;</a></p>
+											</div>
+										</div>
+									</div>
+																	<div class="col-md-4">
+										<div class="card card-blog">
+																							<div class="card-image">
+													<a href="http://somebooks.es/otras-opciones-del-disco-de-instalacion-en-ubuntu-18-04-lts/" title="Otras opciones del disco de instalación en Ubuntu 18.04 LTS">
+														<img width="360" height="240" src="http://somebooks.es/wp-content/uploads/2018/07/Ubuntu-b-360x240.png" class="attachment-hestia-blog size-hestia-blog wp-post-image" alt="" srcset="http://somebooks.es/wp-content/uploads/2018/07/Ubuntu-b-360x240.png,http://somebooks.es/wp-content/uploads/2018/07/Ubuntu-b-150x100.png,http://somebooks.es/wp-content/uploads/2018/07/Ubuntu-b-300x200.png,http://somebooks.es/wp-content/uploads/2018/07/Ubuntu-b.png" sizes="(max-width: 360px) 100vw, 360px" data-attachment-id="10429" data-permalink="http://somebooks.es/finalizar-programas-no-responden-ubuntu-18-04-lts/ubuntu-b-2/" data-orig-file="http://somebooks.es/wp-content/uploads/2018/07/Ubuntu-b.png" data-orig-size="750,501" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Ubuntu-b" data-image-description="" data-medium-file="http://somebooks.es/wp-content/uploads/2018/07/Ubuntu-b-300x200.png" data-large-file="http://somebooks.es/wp-content/uploads/2018/07/Ubuntu-b.png">													</a>
+												</div>
+																						<div class="content">
+												<h6 class="category text-info"><a href="http://somebooks.es/category/sistemas-operativos-en-red-2a-ed/" title="Ver todos las entradas en Sistemas Operativos en Red (2ª ed.)">Sistemas Operativos en Red (2ª ed.)</a> </h6>
+												<h4 class="card-title">
+													<a class="blog-item-title-link" href="http://somebooks.es/otras-opciones-del-disco-de-instalacion-en-ubuntu-18-04-lts/" title="Otras opciones del disco de instalación en Ubuntu 18.04 LTS" rel="bookmark">
+														Otras opciones del disco de instalación en Ubuntu 18.04 LTS													</a>
+												</h4>
+												<p class="card-description">Además del proceso de instalación que hemos detallado en otros artículos de SomeBooks.es, el Live CD de Ubuntu 18.04 LTS nos ofrece otras opciones que pueden resultar de ayuda en algunas situaciones. Dichas opciones están<a class="moretag" href="..\index.html"> Leer más&hellip;</a></p>
+											</div>
+										</div>
+									</div>
+																	<div class="col-md-4">
+										<div class="card card-blog">
+																						<div class="content">
+												<h6 class="category text-info"><a href="http://somebooks.es/category/sistemas-operativos-en-red-2a-ed/" title="Ver todos las entradas en Sistemas Operativos en Red (2ª ed.)">Sistemas Operativos en Red (2ª ed.)</a> </h6>
+												<h4 class="card-title">
+													<a class="blog-item-title-link" href="http://somebooks.es/crear-perfil-obligatorio-windows-server-2016-utilizando-ubuntu/" title="Crear un perfil obligatorio en Windows Server 2016 utilizando Ubuntu" rel="bookmark">
+														Crear un perfil obligatorio en Windows Server 2016 utilizando Ubuntu													</a>
+												</h4>
+												<p class="card-description">En SomeBooks.es ya hemos dedicado algunos artículos a la creación de perfiles móviles de usuario. Como recordarás, cuando un usuario dispone de un perfil móvil, podrá iniciar sesión desde diferentes ordenadores cliente, manteniendo el mismo<a class="moretag" href="..\index.html"> Leer más&hellip;</a></p>
+											</div>
+										</div>
+									</div>
+																							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-wrapper">
+						<footer class="footer footer-black footer-big">
+						<div class="container">
+												
+				<div class="hestia-bottom-footer-content">
+					<div class="hestia-bottom-footer-content">					<div class="copyright pull-right">
+				<a href="https://themeisle.com/themes/hestia/" target="_blank" rel="nofollow">Hestia</a> | Funciona gracias a <a href="http://es.wordpress.org" rel="nofollow">WordPress</a>			</div>
+			</div>				</div>
+			</div>
+					</footer>
+				</div>
+	</div>
+	<div style="display:none">
+	</div>
+		<button class="hestia-scroll-to-top">
+			<i class="fa fa-angle-double-up" aria-hidden="true"></i>
+		</button>
+		
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"http:\/\/somebooks.es\/capitulo-12-integracion-de-redes-mixtas-con-windows-y-linux\/":5750};
+	</script>
+<link rel='stylesheet' id='genericons-css' href='http://somebooks.es/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css?ver=3.1' type='text/css' media='all'>
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201905'></script>
+<script type='text/javascript' src='https://secure.gravatar.com/js/gprofiles.js?ver=2019Janaa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://somebooks.es/wp-content/plugins/jetpack/modules/wpgroho.js?ver=4.9.9'></script>
+<script type='text/javascript' src='http://somebooks.es/wp-includes/js/comment-reply.min.js?ver=4.9.9'></script>
+<script type='text/javascript' src='http://somebooks.es/wp-content/themes/hestia/assets/bootstrap/js/bootstrap.min.js?ver=1.0.1'></script>
+<script type='text/javascript' src='http://somebooks.es/wp-content/themes/hestia/assets/js/material.js?ver=1.0.1'></script>
+<script type='text/javascript' src='http://somebooks.es/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var requestpost = {"ajaxurl":"http:\/\/somebooks.es\/wp-admin\/admin-ajax.php","disable_autoslide":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://somebooks.es/wp-content/themes/hestia/assets/js/scripts.js?ver=1.1.83'></script>
+<script type='text/javascript' src='http://somebooks.es/wp-includes/js/wp-embed.min.js?ver=4.9.9'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://somebooks.es/wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=6.3.3'></script>
+<script type='text/javascript'>
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-google-plus-1', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+				return false;
+			});
+</script>
+<script type='text/javascript' src='https://stats.wp.com/e-201905.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:6.3.3',blog:'118538658',post:'5750',tz:'0',srv:'somebooks.es'} ]);
+	_stq.push([ 'clickTrackerInit', '118538658', '5750' ]);
+</script>
+</body>
+</html>
