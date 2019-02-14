@@ -29,3 +29,7 @@ Inciar el sitio:
 cd sitio
 bundle exec jekyll serve
 ```
+Usar esto si se desea ver desde otra IP que no sea localhost:
+```sh
+bundle exec jekyll serve --host=203.0.113.0
+```
