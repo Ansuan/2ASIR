@@ -1,0 +1,40 @@
+version: '3.7'
+services:
+  mysql:
+	image: mysql:5.7
+	container_name: mysql
+	hostname: mysql
+	environment:
+  	- MYSQL_ROOT_PASSWORD=root
+  	- MYSQL_DATABASE=wordpress
+  	- MYSQL_USER=word
+  	- MYSQL_PASSWORD=word
+	volumes:
+   	- db-data:/var/lib/mysql
+	networks:
+ 	word:
+
+  wordpress:
+	image: wordpress
+	container_name: wordpress
+	hostname: wordpress
+	ports:
+  	- "8080:80"
+  	- "8443:443"
+	environment:
+  	- WORDPRESS_DB_HOST=mysql
+  	- WORDPRESS_DB_USER=word
+  	- WORDPRESS_DB_PASSWORD=word
+  	- WORDPRESS_DB_NAME=wordpress
+	volumes:
+   	- www-conf:/etc/apache2/
+   	- www-data:/var/www
+	networks:
+ 	word:
+
+volumes:
+  db-data:
+  www-conf:
+  www-data:
+networks:
+  word:
